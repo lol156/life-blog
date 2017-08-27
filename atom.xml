@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://signalfire2017.com/"/>
-  <updated>2017-08-26T12:07:52.555Z</updated>
+  <updated>2017-08-27T06:08:31.481Z</updated>
   <id>http://signalfire2017.com/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>终于有了自己的博客</title>
+    <link href="http://signalfire2017.com/2017/08/27/%E7%BB%88%E4%BA%8E%E6%9C%89%E4%BA%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://signalfire2017.com/2017/08/27/终于有了自己的博客/</id>
+    <published>2017-08-27T06:05:14.000Z</published>
+    <updated>2017-08-27T06:08:31.481Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://signalfire2017.com/categories/essay/"/>
+    
+    
+      <category term="haha" scheme="http://signalfire2017.com/tags/haha/"/>
+    
+      <category term="hsh2" scheme="http://signalfire2017.com/tags/hsh2/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
