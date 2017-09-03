@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://signalfire2017.com/"/>
-  <updated>2017-09-03T15:30:32.771Z</updated>
+  <updated>2017-09-03T15:40:54.014Z</updated>
   <id>http://signalfire2017.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>idea快捷键记录</title>
+    <link href="http://signalfire2017.com/2017/09/03/idea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/"/>
+    <id>http://signalfire2017.com/2017/09/03/idea快捷键记录/</id>
+    <published>2017-09-03T15:37:13.000Z</published>
+    <updated>2017-09-03T15:40:54.014Z</updated>
+    
+    <content type="html"><![CDATA[<p>查找方法,这个用于看源码的时候感觉很好用记录一下</p>
+<blockquote>
+<p>ctrl+shift+alt+n</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;查找方法,这个用于看源码的时候感觉很好用记录一下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ctrl+shift+alt+n&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    
+    </summary>
+    
+      <category term="工具" scheme="http://signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="idea" scheme="http://signalfire2017.com/tags/idea/"/>
+    
+      <category term="快捷键" scheme="http://signalfire2017.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>记录下hexo常用命令自己方便看</title>
