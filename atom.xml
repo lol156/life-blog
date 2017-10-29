@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://signalfire2017.com/"/>
-  <updated>2017-10-29T08:15:42.022Z</updated>
+  <updated>2017-10-29T15:51:52.487Z</updated>
   <id>http://signalfire2017.com/</id>
   
   <author>
@@ -17,10 +17,35 @@
   
   <entry>
     <title>大数据01-linux安装及基本命令.md</title>
-    <link href="http://signalfire2017.com/2017/10/28/linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
-    <id>http://signalfire2017.com/2017/10/28/linux文件系统结构/</id>
+    <link href="http://signalfire2017.com/2017/10/29/%E5%A4%A7%E6%95%B0%E6%8D%AE01-linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    <id>http://signalfire2017.com/2017/10/29/大数据01-linux文件系统结构/</id>
+    <published>2017-10-29T14:30:38.000Z</published>
+    <updated>2017-10-29T15:51:52.487Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vmare克隆后修改地址问题"><a href="#vmare克隆后修改地址问题" class="headerlink" title="vmare克隆后修改地址问题"></a>vmare克隆后修改地址问题</h1><p>解决克隆后eth0不见的问题</p>
+<p>直接修改  /etc/sysconfig/network-script/ifcfg-eth0<br>删掉UUID  HWADDR<br>配置静态地址<br>然后：<br>修改 /etc/udev/rules.d/70-persistent-net.rules<br>然后 reboot</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;vmare克隆后修改地址问题&quot;&gt;&lt;a href=&quot;#vmare克隆后修改地址问题&quot; class=&quot;headerlink&quot; title=&quot;vmare克隆后修改地址问题&quot;&gt;&lt;/a&gt;vmare克隆后修改地址问题&lt;/h1&gt;&lt;p&gt;解决克隆后eth0不见的问题&lt;/p&gt;
+&lt;p&gt;
+    
+    </summary>
+    
+      <category term="大数据学习笔记" scheme="http://signalfire2017.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="大数据" scheme="http://signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据02.md</title>
+    <link href="http://signalfire2017.com/2017/10/28/%E5%A4%A7%E6%95%B0%E6%8D%AE02/"/>
+    <id>http://signalfire2017.com/2017/10/28/大数据02/</id>
     <published>2017-10-28T14:30:38.000Z</published>
-    <updated>2017-10-29T08:15:42.022Z</updated>
+    <updated>2017-10-29T14:52:58.809Z</updated>
     
     <content type="html"><![CDATA[<h1 id="linux-文件目录"><a href="#linux-文件目录" class="headerlink" title="linux 文件目录"></a>linux 文件目录</h1><blockquote>
 <p>约定俗成</p>
@@ -235,9 +260,9 @@ chkconfig iptables off
       <category term="大数据学习笔记" scheme="http://signalfire2017.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="linux" scheme="http://signalfire2017.com/tags/linux/"/>
-    
       <category term="大数据" scheme="http://signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="linux" scheme="http://signalfire2017.com/tags/linux/"/>
     
   </entry>
   

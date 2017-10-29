@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,大数据," />
+  <meta name="keywords" content="大数据,linux," />
 
 
 
@@ -98,10 +98,10 @@
 
 
 <meta name="description" content="linux 文件目录 约定俗成     目录 功能     /bin 可执行文件   /sbin 系统可执行文件   /boot 跟启动相关的东西   /dev 设备 硬件   /etc 配置文件    /lib 依赖包   /lib64 依赖包   /media 一些外接设备   /mnt 挂载   /home 用户目录   /usr user share resource 公用的一些软件">
-<meta name="keywords" content="linux,大数据">
+<meta name="keywords" content="大数据,linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大数据01-linux安装及基本命令.md">
-<meta property="og:url" content="http://signalfire2017.com/2017/10/28/linux文件系统结构/index.html">
+<meta property="og:title" content="大数据02.md">
+<meta property="og:url" content="http://signalfire2017.com/2017/10/28/大数据02/index.html">
 <meta property="og:site_name" content="一生何求">
 <meta property="og:description" content="linux 文件目录 约定俗成     目录 功能     /bin 可执行文件   /sbin 系统可执行文件   /boot 跟启动相关的东西   /dev 设备 硬件   /etc 配置文件    /lib 依赖包   /lib64 依赖包   /media 一些外接设备   /mnt 挂载   /home 用户目录   /usr user share resource 公用的一些软件">
 <meta property="og:locale" content="zh-Hans">
@@ -110,9 +110,9 @@
 <meta property="og:image" content="http://ovasdkxqr.bkt.clouddn.com/dashuju/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86%E6%9C%BA%E5%88%B6%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
 <meta property="og:image" content="http://ovasdkxqr.bkt.clouddn.com/dashuju/%E6%A1%A5%E6%8E%A5%E5%92%8Chostonly%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE.png">
 <meta property="og:image" content="http://ovasdkxqr.bkt.clouddn.com/dashuju/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86%E6%9C%BA%E5%88%B6%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
-<meta property="og:updated_time" content="2017-10-29T08:15:42.022Z">
+<meta property="og:updated_time" content="2017-10-29T14:52:58.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大数据01-linux安装及基本命令.md">
+<meta name="twitter:title" content="大数据02.md">
 <meta name="twitter:description" content="linux 文件目录 约定俗成     目录 功能     /bin 可执行文件   /sbin 系统可执行文件   /boot 跟启动相关的东西   /dev 设备 硬件   /etc 配置文件    /lib 依赖包   /lib64 依赖包   /media 一些外接设备   /mnt 挂载   /home 用户目录   /usr user share resource 公用的一些软件">
 <meta name="twitter:image" content="http://ovasdkxqr.bkt.clouddn.com/dashuju/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">
 
@@ -133,9 +133,9 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'ZIC4LSQ8H5',
+      apiKey: 'be340275b2cb4f7da3aa886d2dd27d2e',
+      indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -144,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://signalfire2017.com/2017/10/28/linux文件系统结构/"/>
+  <link rel="canonical" href="http://signalfire2017.com/2017/10/28/大数据02/"/>
 
 
 
 
 
-  <title>大数据01-linux安装及基本命令.md | 一生何求</title>
+  <title>大数据02.md | 一生何求</title>
   
 
 
@@ -256,9 +256,47 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -287,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://signalfire2017.com/2017/10/28/linux文件系统结构/">
+    <link itemprop="mainEntityOfPage" href="http://signalfire2017.com/2017/10/28/大数据02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="signalFire">
@@ -304,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">大数据01-linux安装及基本命令.md</h1>
+          <h1 class="post-title" itemprop="name headline">大数据02.md</h1>
         
 
         <div class="post-meta">
@@ -535,9 +573,9 @@ chkconfig iptables off
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
-          
             <a href="/tags/大数据/" rel="tag"># 大数据</a>
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
         </div>
       
@@ -559,6 +597,10 @@ chkconfig iptables off
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/29/大数据01-linux文件系统结构/" rel="prev" title="大数据01-linux安装及基本命令.md">
+                大数据01-linux安装及基本命令.md <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -638,7 +680,7 @@ chkconfig iptables off
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -649,7 +691,7 @@ chkconfig iptables off
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -660,7 +702,7 @@ chkconfig iptables off
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -879,6 +921,19 @@ chkconfig iptables off
   
 
 
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
 
 
 
