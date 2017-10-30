@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://signalfire2017.com/"/>
-  <updated>2017-10-30T15:06:43.042Z</updated>
+  <updated>2017-10-30T15:08:00.240Z</updated>
   <id>http://signalfire2017.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://signalfire2017.com/2017/10/30/hexo-next-%E6%90%9C%E7%B4%A2-algolia/"/>
     <id>http://signalfire2017.com/2017/10/30/hexo-next-搜索-algolia/</id>
     <published>2017-10-30T14:48:47.000Z</published>
-    <updated>2017-10-30T15:06:43.042Z</updated>
+    <updated>2017-10-30T15:08:00.240Z</updated>
     
     <content type="html"><![CDATA[<h1 id="目的-添加搜索功能"><a href="#目的-添加搜索功能" class="headerlink" title="目的:添加搜索功能"></a>目的:添加搜索功能</h1><p>#next版本<br>我的版本号是<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Theme version</div><div class="line">version: <span class="number">5.1</span>.2</div></pre></td></tr></table></figure></p>
 <p>next5.0+版本集成了algolia 这样使配置algolia更简单</p>
@@ -38,7 +38,7 @@
 </ol>
 </li>
 </ul>
-<p><img src="http://ovasdkxqr.bkt.clouddn.com/hexo/QQ%E6%88%AA%E5%9B%BE20171030220735.jpg" alt="2"><br><img src="http://ovasdkxqr.bkt.clouddn.com/hexo/QQ%E6%88%AA%E5%9B%BE20171030220635.jpg" alt="3"><br><img src="http://ovasdkxqr.bkt.clouddn.com/hexo/QQ%E6%88%AA%E5%9B%BE20171030220846.jpg" alt="4"><br><img src="http://ovasdkxqr.bkt.clouddn.com/hexo/QQ%E6%88%AA%E5%9B%BE20171030220920.jpg" alt="5"></p>
+<p><img src="http://ovasdkxqr.bkt.clouddn.com/hexo/QQ%E6%88%AA%E5%9B%BE20171030220635.jpg" alt="3"><br><img src="http://ovasdkxqr.bkt.clouddn.com/hexo/QQ%E6%88%AA%E5%9B%BE20171030220735.jpg" alt="2"><br><img src="http://ovasdkxqr.bkt.clouddn.com/hexo/QQ%E6%88%AA%E5%9B%BE20171030220846.jpg" alt="4"><br><img src="http://ovasdkxqr.bkt.clouddn.com/hexo/QQ%E6%88%AA%E5%9B%BE20171030220920.jpg" alt="5"></p>
 <ul>
 <li>记录  <ol>
 <li>Application ID  </li>
