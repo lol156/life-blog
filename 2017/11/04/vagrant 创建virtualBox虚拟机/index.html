@@ -107,7 +107,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://static.oschina.net/uploads/img/201707/02192036_F9Jv.jpg">
 <meta property="og:image" content="https://static.oschina.net/uploads/img/201707/02192410_T07t.jpg">
-<meta property="og:updated_time" content="2017-11-04T14:20:13.061Z">
+<meta property="og:updated_time" content="2017-11-04T15:06:41.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vagrant 创建virtualBox虚拟机">
 <meta name="twitter:description" content="安装vagrant本机环境系统环境 ： win10 64 系统 软件及镜像vagrant 官网 https://www.vagrantup.com/vagrant 需要依赖虚拟机 我用的 virtualBoxvirtualBox 官网 https://www.virtualbox.org/virtualBox 镜像 在vagrant官网中可以下载 由于国内下载比较慢，已分享到百度云    名称 类">
@@ -722,6 +722,9 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
 </code></pre><p>可以看到根目录大小已经变成1T了</p>
 <p><a href="http://pan.baidu.com/s/1dEC3ePr" target="_blank" rel="external">http://pan.baidu.com/s/1dEC3ePr</a></p>
 <p>由于不了解linux,修改磁盘大小费了很多事.完成后打了包,做成了新的box，方便以后直接使用。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="修改linux-语言"><a href="#修改linux-语言" class="headerlink" title="修改linux 语言"></a>修改linux 语言</h2><blockquote>
+<p>/etc/locale.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LANG=&apos;en_US.UTF-8&apos;</div></pre></td></tr></table></figure></p>
+</blockquote>
 <h1 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客:"></a>参考博客:</h1><h2 id="调整-VirtualBox-虚拟机的磁盘大小"><a href="#调整-VirtualBox-虚拟机的磁盘大小" class="headerlink" title="调整 VirtualBox 虚拟机的磁盘大小"></a>调整 VirtualBox 虚拟机的磁盘大小</h2><p><a href="https://cnzhx.net/blog/resizing-lvm-centos-virtualbox-guest/" target="_blank" rel="external">https://cnzhx.net/blog/resizing-lvm-centos-virtualbox-guest/</a>  </p>
 <h2 id="手把手教你给-CentOS-7-添加硬盘及扩容-LVM"><a href="#手把手教你给-CentOS-7-添加硬盘及扩容-LVM" class="headerlink" title="手把手教你给 CentOS 7 添加硬盘及扩容(LVM)"></a>手把手教你给 CentOS 7 添加硬盘及扩容(LVM)</h2><p><a href="https://aurthurxlc.github.io/Aurthur-2017/Centos-7-extend-lvm-volume.html" target="_blank" rel="external">https://aurthurxlc.github.io/Aurthur-2017/Centos-7-extend-lvm-volume.html</a></p>
 
@@ -754,8 +757,8 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/04/centos7-开放端口/" rel="next" title="centos7 开放端口">
-                <i class="fa fa-chevron-left"></i> centos7 开放端口
+              <a href="/2017/11/04/centos7-安装mysql-转/" rel="next" title="centos7 安装mysql-转">
+                <i class="fa fa-chevron-left"></i> centos7 安装mysql-转
               </a>
             
           </div>
@@ -842,7 +845,7 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -864,7 +867,7 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -906,7 +909,7 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装vagrant"><span class="nav-number">1.</span> <span class="nav-text">安装vagrant</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本机环境"><span class="nav-number">1.1.</span> <span class="nav-text">本机环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件及镜像"><span class="nav-number">1.2.</span> <span class="nav-text">软件及镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改vagrant-存放box的位置"><span class="nav-number">1.3.</span> <span class="nav-text">更改vagrant 存放box的位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改virtualBox-存放镜像目录"><span class="nav-number">1.4.</span> <span class="nav-text">更改virtualBox 存放镜像目录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动vagrant"><span class="nav-number">2.</span> <span class="nav-text">启动vagrant</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加box"><span class="nav-number">2.1.</span> <span class="nav-text">添加box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">2.2.</span> <span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vagrant-配置文件"><span class="nav-number">2.2.1.</span> <span class="nav-text">vagrant 配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动虚拟机"><span class="nav-number">2.3.</span> <span class="nav-text">启动虚拟机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改虚拟机磁盘大小"><span class="nav-number">3.</span> <span class="nav-text">修改虚拟机磁盘大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考博客"><span class="nav-number">4.</span> <span class="nav-text">参考博客:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#调整-VirtualBox-虚拟机的磁盘大小"><span class="nav-number">4.1.</span> <span class="nav-text">调整 VirtualBox 虚拟机的磁盘大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手把手教你给-CentOS-7-添加硬盘及扩容-LVM"><span class="nav-number">4.2.</span> <span class="nav-text">手把手教你给 CentOS 7 添加硬盘及扩容(LVM)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装vagrant"><span class="nav-number">1.</span> <span class="nav-text">安装vagrant</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本机环境"><span class="nav-number">1.1.</span> <span class="nav-text">本机环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件及镜像"><span class="nav-number">1.2.</span> <span class="nav-text">软件及镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改vagrant-存放box的位置"><span class="nav-number">1.3.</span> <span class="nav-text">更改vagrant 存放box的位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改virtualBox-存放镜像目录"><span class="nav-number">1.4.</span> <span class="nav-text">更改virtualBox 存放镜像目录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动vagrant"><span class="nav-number">2.</span> <span class="nav-text">启动vagrant</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加box"><span class="nav-number">2.1.</span> <span class="nav-text">添加box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">2.2.</span> <span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vagrant-配置文件"><span class="nav-number">2.2.1.</span> <span class="nav-text">vagrant 配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动虚拟机"><span class="nav-number">2.3.</span> <span class="nav-text">启动虚拟机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改虚拟机磁盘大小"><span class="nav-number">3.</span> <span class="nav-text">修改虚拟机磁盘大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改linux-语言"><span class="nav-number">4.1.</span> <span class="nav-text">修改linux 语言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考博客"><span class="nav-number">5.</span> <span class="nav-text">参考博客:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#调整-VirtualBox-虚拟机的磁盘大小"><span class="nav-number">5.1.</span> <span class="nav-text">调整 VirtualBox 虚拟机的磁盘大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手把手教你给-CentOS-7-添加硬盘及扩容-LVM"><span class="nav-number">5.2.</span> <span class="nav-text">手把手教你给 CentOS 7 添加硬盘及扩容(LVM)</span></a></li></ol></li></ol></div>
             
 
           </div>

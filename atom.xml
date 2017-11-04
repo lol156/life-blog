@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://signalfire2017.com/"/>
-  <updated>2017-11-04T14:20:13.061Z</updated>
+  <updated>2017-11-04T15:06:41.385Z</updated>
   <id>http://signalfire2017.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://signalfire2017.com/2017/11/04/vagrant%20%E5%88%9B%E5%BB%BAvirtualBox%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     <id>http://signalfire2017.com/2017/11/04/vagrant 创建virtualBox虚拟机/</id>
     <published>2017-11-04T15:37:13.000Z</published>
-    <updated>2017-11-04T14:20:13.061Z</updated>
+    <updated>2017-11-04T15:06:41.385Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安装vagrant"><a href="#安装vagrant" class="headerlink" title="安装vagrant"></a>安装vagrant</h1><h2 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h2><p>系统环境 ： win10 64 系统</p>
 <h2 id="软件及镜像"><a href="#软件及镜像" class="headerlink" title="软件及镜像"></a>软件及镜像</h2><p>vagrant 官网 <a href="https://www.vagrantup.com/" target="_blank" rel="external">https://www.vagrantup.com/</a><br>vagrant 需要依赖虚拟机 我用的 virtualBox<br>virtualBox 官网 <a href="https://www.virtualbox.org/" target="_blank" rel="external">https://www.virtualbox.org/</a><br>virtualBox 镜像 在vagrant官网中可以下载</p>
@@ -333,6 +333,9 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
 </code></pre><p>可以看到根目录大小已经变成1T了</p>
 <p><a href="http://pan.baidu.com/s/1dEC3ePr" target="_blank" rel="external">http://pan.baidu.com/s/1dEC3ePr</a></p>
 <p>由于不了解linux,修改磁盘大小费了很多事.完成后打了包,做成了新的box，方便以后直接使用。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="修改linux-语言"><a href="#修改linux-语言" class="headerlink" title="修改linux 语言"></a>修改linux 语言</h2><blockquote>
+<p>/etc/locale.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LANG=&apos;en_US.UTF-8&apos;</div></pre></td></tr></table></figure></p>
+</blockquote>
 <h1 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客:"></a>参考博客:</h1><h2 id="调整-VirtualBox-虚拟机的磁盘大小"><a href="#调整-VirtualBox-虚拟机的磁盘大小" class="headerlink" title="调整 VirtualBox 虚拟机的磁盘大小"></a>调整 VirtualBox 虚拟机的磁盘大小</h2><p><a href="https://cnzhx.net/blog/resizing-lvm-centos-virtualbox-guest/" target="_blank" rel="external">https://cnzhx.net/blog/resizing-lvm-centos-virtualbox-guest/</a>  </p>
 <h2 id="手把手教你给-CentOS-7-添加硬盘及扩容-LVM"><a href="#手把手教你给-CentOS-7-添加硬盘及扩容-LVM" class="headerlink" title="手把手教你给 CentOS 7 添加硬盘及扩容(LVM)"></a>手把手教你给 CentOS 7 添加硬盘及扩容(LVM)</h2><p><a href="https://aurthurxlc.github.io/Aurthur-2017/Centos-7-extend-lvm-volume.html" target="_blank" rel="external">https://aurthurxlc.github.io/Aurthur-2017/Centos-7-extend-lvm-volume.html</a></p>
 ]]></content>
@@ -389,6 +392,47 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
   </entry>
   
   <entry>
+    <title>centos7 安装mysql-转</title>
+    <link href="http://signalfire2017.com/2017/11/04/centos7-%E5%AE%89%E8%A3%85mysql-%E8%BD%AC/"/>
+    <id>http://signalfire2017.com/2017/11/04/centos7-安装mysql-转/</id>
+    <published>2017-11-04T14:30:14.000Z</published>
+    <updated>2017-11-04T15:15:04.097Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.cnblogs.com/xxoome/p/5864912.html" target="_blank" rel="external">linux下安装Mysql</a></p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><h3 id="本地登陆不进去"><a href="#本地登陆不进去" class="headerlink" title="本地登陆不进去"></a>本地登陆不进去</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#mysql -u root -p </div><div class="line">提示”Access denied for user ‘root’@’localhost’ (using password: YES)”</div></pre></td></tr></table></figure>
+<p>我的mysql版本 </p>
+<blockquote>
+<p>mysql  Ver 14.14 Distrib 5.6.38</p>
+</blockquote>
+<p>先修改一下mysql安装目录下面my.cnf,最后一行添加 <code>skip-grant-tables</code><br>然后登陆 进去修改</p>
+<blockquote>
+<p>update mysql.user set password=password(‘mypassword’) where user=’root’; </p>
+</blockquote>
+<p>退出,修改文件删除刚加的属性,重启mysql服务</p>
+<h3 id="远程连接-ip无权限"><a href="#远程连接-ip无权限" class="headerlink" title="远程连接 ip无权限"></a>远程连接 ip无权限</h3><blockquote>
+<p>update mysql.user set host=’%’ where user=’root’;</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/xxoome/p/5864912.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;linux下安装Mysql&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; cla
+    
+    </summary>
+    
+      <category term="学习" scheme="http://signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="大数据" scheme="http://signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="linux" scheme="http://signalfire2017.com/tags/linux/"/>
+    
+      <category term="mysql" scheme="http://signalfire2017.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>centos7 开放端口</title>
     <link href="http://signalfire2017.com/2017/11/04/centos7-%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/"/>
     <id>http://signalfire2017.com/2017/11/04/centos7-开放端口/</id>
@@ -427,7 +471,7 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     <link href="http://signalfire2017.com/2017/11/01/%E5%A4%A7%E6%95%B0%E6%8D%AE02-02-linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0-yum/"/>
     <id>http://signalfire2017.com/2017/11/01/大数据02-02-linux命令继续学习-yum/</id>
     <published>2017-11-01T15:50:39.000Z</published>
-    <updated>2017-11-04T10:12:43.482Z</updated>
+    <updated>2017-11-04T15:06:18.681Z</updated>
     
     <content type="html"><![CDATA[<h1 id="YUM的常用命令"><a href="#YUM的常用命令" class="headerlink" title="YUM的常用命令"></a>YUM的常用命令</h1><p>安装httpd并确认安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum instll -y httpd</div></pre></td></tr></table></figure></p>
 <p>列出所有可用的package和package组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum list</div></pre></td></tr></table></figure></p>
@@ -447,6 +491,10 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     
     
       <category term="大数据" scheme="http://signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="linux" scheme="http://signalfire2017.com/tags/linux/"/>
+    
+      <category term="centos7" scheme="http://signalfire2017.com/tags/centos7/"/>
     
   </entry>
   

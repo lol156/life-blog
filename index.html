@@ -502,6 +502,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://signalfire2017.com/2017/11/04/centos7-安装mysql-转/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="signalFire">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ovasdkxqr.bkt.clouddn.com/common/head1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一生何求">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/04/centos7-安装mysql-转/" itemprop="url">centos7 安装mysql-转</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T22:30:14+08:00">
+                2017-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://www.cnblogs.com/xxoome/p/5864912.html" target="_blank" rel="external">linux下安装Mysql</a></p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><h3 id="本地登陆不进去"><a href="#本地登陆不进去" class="headerlink" title="本地登陆不进去"></a>本地登陆不进去</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#mysql -u root -p </div><div class="line">提示”Access denied for user ‘root’@’localhost’ (using password: YES)”</div></pre></td></tr></table></figure>
+<p>我的mysql版本 </p>
+<blockquote>
+<p>mysql  Ver 14.14 Distrib 5.6.38</p>
+</blockquote>
+<p>先修改一下mysql安装目录下面my.cnf,最后一行添加 <code>skip-grant-tables</code><br>然后登陆 进去修改</p>
+<blockquote>
+<p>update mysql.user set password=password(‘mypassword’) where user=’root’; </p>
+</blockquote>
+<p>退出,修改文件删除刚加的属性,重启mysql服务</p>
+<h3 id="远程连接-ip无权限"><a href="#远程连接-ip无权限" class="headerlink" title="远程连接 ip无权限"></a>远程连接 ip无权限</h3><blockquote>
+<p>update mysql.user set host=’%’ where user=’root’;</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://signalfire2017.com/2017/11/04/centos7-开放端口/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1780,157 +1935,13 @@ per * .rpm
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://signalfire2017.com/2017/08/27/终于有了自己的博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="signalFire">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ovasdkxqr.bkt.clouddn.com/common/head1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一生何求">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/27/终于有了自己的博客/" itemprop="url">终于有了自己的博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-27T14:05:14+08:00">
-                2017-08-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/essay/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>  终于有了自己的博客。感谢网络，感谢爱分享的人。<br>  搭建博客时候参考的帖子：<br>  <a href="http://visugar.com/2017/05/04/20170504SetUpHexoBlog/" target="_blank" rel="external">hexo从零开始到搭建完整</a><br>  <a href="http://www.jianshu.com/p/b7886271e21a" target="_blank" rel="external">Hexo安装和配置</a><br>  <a href="http://www.jianshu.com/p/35e197cb1273" target="_blank" rel="external">Hexo搭建Github-Pages博客填坑教程</a><br>  <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">主题nexT使用指南</a></p>
-<p>  自己碰到的坑  </p>
-<ul>
-<li>安装hexo后启动时,访问localhost:4000网页没反应 <code>替换端口号后解决了</code></li>
-<li>rss 链接出现问题,在<a href="http://www.jianshu.com/p/35e197cb1273" target="_blank" rel="external">Hexo搭建Github-Pages博客填坑教程</a> 中找到了解决办法</li>
-<li>hueman 主题下载后启动错误,这个没解决,替换找别的主题了。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1977,7 +1988,7 @@ per * .rpm
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1999,7 +2010,7 @@ per * .rpm
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
