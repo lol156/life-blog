@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="一生何求">
 <meta property="og:description" content="CentOS升级到7之后，发现无法使用iptables控制Linuxs的端口，google之后发现Centos 7使用firewalld代替了原来的iptables。下面记录如何使用firewalld开放Linux端口： 开启端口 1firewall-cmd --zone=public --add-port=80/tcp --permanent 命令含义： 12345--zone #作用域--ad">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-04T14:26:23.745Z">
+<meta property="og:updated_time" content="2017-11-05T10:15:25.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7 开放端口">
 <meta name="twitter:description" content="CentOS升级到7之后，发现无法使用iptables控制Linuxs的端口，google之后发现Centos 7使用firewalld代替了原来的iptables。下面记录如何使用firewalld开放Linux端口： 开启端口 1firewall-cmd --zone=public --add-port=80/tcp --permanent 命令含义： 12345--zone #作用域--ad">
@@ -415,6 +415,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">--zone #作用域</div><div class="line"></div><div class="line">--add-port=80/tcp  #添加端口，格式为：端口/通讯协议</div><div class="line"></div><div class="line">--permanent  #永久生效，没有此参数重启后失效</div></pre></td></tr></table></figure>
 <p>重启防火墙</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --reload</div></pre></td></tr></table></figure>
+<p>查看开启了那些端口</p>
+<blockquote>
+<p>/sbin/iptables -L -n</p>
+</blockquote>
+
       
     </div>
     
@@ -448,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/01/大数据02-02-linux命令继续学习-yum/" rel="next" title="大数据02-02 linux命令继续学习 yum">
-                <i class="fa fa-chevron-left"></i> 大数据02-02 linux命令继续学习 yum
+              <a href="/2017/10/30/hexo-next-搜索-algolia/" rel="next" title="hexo next 搜索 algolia">
+                <i class="fa fa-chevron-left"></i> hexo next 搜索 algolia
               </a>
             
           </div>
@@ -531,7 +536,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

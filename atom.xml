@@ -437,7 +437,7 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     <link href="http://signalfire2017.com/2017/11/04/centos7-%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/"/>
     <id>http://signalfire2017.com/2017/11/04/centos7-开放端口/</id>
     <published>2017-11-04T14:15:10.000Z</published>
-    <updated>2017-11-04T14:26:23.745Z</updated>
+    <updated>2017-11-05T10:15:25.250Z</updated>
     
     <content type="html"><![CDATA[<p>CentOS升级到7之后，发现无法使用iptables控制Linuxs的端口，google之后发现Centos 7使用firewalld代替了原来的iptables。下面记录如何使用firewalld开放Linux端口：</p>
 <p>开启端口</p>
@@ -445,45 +445,18 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
 <p>命令含义：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">--zone #作用域</div><div class="line"></div><div class="line">--add-port=80/tcp  #添加端口，格式为：端口/通讯协议</div><div class="line"></div><div class="line">--permanent  #永久生效，没有此参数重启后失效</div></pre></td></tr></table></figure>
 <p>重启防火墙</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --reload</div></pre></td></tr></table></figure>]]></content>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --reload</div></pre></td></tr></table></figure>
+<p>查看开启了那些端口</p>
+<blockquote>
+<p>/sbin/iptables -L -n</p>
+</blockquote>
+]]></content>
     
     <summary type="html">
     
       &lt;p&gt;CentOS升级到7之后，发现无法使用iptables控制Linuxs的端口，google之后发现Centos 7使用firewalld代替了原来的iptables。下面记录如何使用firewalld开放Linux端口：&lt;/p&gt;
 &lt;p&gt;开启端口&lt;/p&gt;
 &lt;figure cl
-    
-    </summary>
-    
-      <category term="学习" scheme="http://signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="大数据" scheme="http://signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="linux" scheme="http://signalfire2017.com/tags/linux/"/>
-    
-      <category term="centos7" scheme="http://signalfire2017.com/tags/centos7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大数据02-02 linux命令继续学习 yum</title>
-    <link href="http://signalfire2017.com/2017/11/01/%E5%A4%A7%E6%95%B0%E6%8D%AE02-02-linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0-yum/"/>
-    <id>http://signalfire2017.com/2017/11/01/大数据02-02-linux命令继续学习-yum/</id>
-    <published>2017-11-01T15:50:39.000Z</published>
-    <updated>2017-11-04T15:06:18.681Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="YUM的常用命令"><a href="#YUM的常用命令" class="headerlink" title="YUM的常用命令"></a>YUM的常用命令</h1><p>安装httpd并确认安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum instll -y httpd</div></pre></td></tr></table></figure></p>
-<p>列出所有可用的package和package组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum list</div></pre></td></tr></table></figure></p>
-<p>清除所有缓冲数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum clean all</div></pre></td></tr></table></figure></p>
-<p>列出一个包所有依赖的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum deplist httpd</div></pre></td></tr></table></figure></p>
-<p>删除httpd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum remove httpd</div></pre></td></tr></table></figure></p>
-<h1 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h1><p>cd /etc/yum.repos.d </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;YUM的常用命令&quot;&gt;&lt;a href=&quot;#YUM的常用命令&quot; class=&quot;headerlink&quot; title=&quot;YUM的常用命令&quot;&gt;&lt;/a&gt;YUM的常用命令&lt;/h1&gt;&lt;p&gt;安装httpd并确认安装&lt;br&gt;&lt;figure class=&quot;highlight plain
     
     </summary>
     
@@ -794,7 +767,7 @@ chkconfig iptables off
     <link href="http://signalfire2017.com/2017/10/29/%E5%A4%A7%E6%95%B0%E6%8D%AE02-01%20linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0/"/>
     <id>http://signalfire2017.com/2017/10/29/大数据02-01 linux命令继续学习/</id>
     <published>2017-10-29T14:30:38.000Z</published>
-    <updated>2017-11-01T15:49:09.828Z</updated>
+    <updated>2017-11-04T15:28:27.718Z</updated>
     
     <content type="html"><![CDATA[<h1 id="vmare克隆后修改地址问题"><a href="#vmare克隆后修改地址问题" class="headerlink" title="vmare克隆后修改地址问题"></a>vmare克隆后修改地址问题</h1><p>解决克隆后eth0不见的问题</p>
 <p>直接修改  /etc/sysconfig/network-script/ifcfg-eth0<br>删掉UUID  HWADDR<br>配置静态地址<br>然后：<br>修改 /etc/udev/rules.d/70-persistent-net.rules<br>然后 reboot</p>
@@ -889,9 +862,9 @@ per * .rpm
       <category term="工具" scheme="http://signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="快捷键" scheme="http://signalfire2017.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    
       <category term="vscode" scheme="http://signalfire2017.com/tags/vscode/"/>
+    
+      <category term="快捷键" scheme="http://signalfire2017.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
   </entry>
   
@@ -949,9 +922,9 @@ per * .rpm
       <category term="工具" scheme="http://signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="idea" scheme="http://signalfire2017.com/tags/idea/"/>
-    
       <category term="快捷键" scheme="http://signalfire2017.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+      <category term="idea" scheme="http://signalfire2017.com/tags/idea/"/>
     
   </entry>
   
