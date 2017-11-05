@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="YUM的常用命令安装httpd并确认安装1yum instll -y httpd 列出所有可用的package和package组1yum list 清除所有缓冲数据1yum clean all 列出一个包所有依赖的包1yum deplist httpd 删除httpd1yum remove httpd 配置本地yum源cd /etc/yum.repos.d">
+<meta name="description" content="YUM的常用命令安装httpd并确认安装1yum instll -y httpd 列出所有可用的package和package组1yum list 清除所有缓冲数据1yum clean all 列出一个包所有依赖的包1yum deplist httpd 删除httpd1yum remove httpd 配置本地yum源cd /etc/yum.repos.d  安装jdk解压安装包  tar -zx">
 <meta name="keywords" content="大数据,linux,centos7">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大数据02-02 linux命令继续学习 yum">
 <meta property="og:url" content="http://signalfire2017.com/2017/11/01/大数据02-02-linux命令继续学习-yum/index.html">
 <meta property="og:site_name" content="一生何求">
-<meta property="og:description" content="YUM的常用命令安装httpd并确认安装1yum instll -y httpd 列出所有可用的package和package组1yum list 清除所有缓冲数据1yum clean all 列出一个包所有依赖的包1yum deplist httpd 删除httpd1yum remove httpd 配置本地yum源cd /etc/yum.repos.d">
+<meta property="og:description" content="YUM的常用命令安装httpd并确认安装1yum instll -y httpd 列出所有可用的package和package组1yum list 清除所有缓冲数据1yum clean all 列出一个包所有依赖的包1yum deplist httpd 删除httpd1yum remove httpd 配置本地yum源cd /etc/yum.repos.d  安装jdk解压安装包  tar -zx">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-04T15:06:18.681Z">
+<meta property="og:updated_time" content="2017-11-05T11:03:41.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据02-02 linux命令继续学习 yum">
-<meta name="twitter:description" content="YUM的常用命令安装httpd并确认安装1yum instll -y httpd 列出所有可用的package和package组1yum list 清除所有缓冲数据1yum clean all 列出一个包所有依赖的包1yum deplist httpd 删除httpd1yum remove httpd 配置本地yum源cd /etc/yum.repos.d">
+<meta name="twitter:description" content="YUM的常用命令安装httpd并确认安装1yum instll -y httpd 列出所有可用的package和package组1yum list 清除所有缓冲数据1yum clean all 列出一个包所有依赖的包1yum deplist httpd 删除httpd1yum remove httpd 配置本地yum源cd /etc/yum.repos.d  安装jdk解压安装包  tar -zx">
 
 
 
@@ -414,6 +414,26 @@
 <p>列出一个包所有依赖的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum deplist httpd</div></pre></td></tr></table></figure></p>
 <p>删除httpd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum remove httpd</div></pre></td></tr></table></figure></p>
 <h1 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h1><p>cd /etc/yum.repos.d </p>
+<h1 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h1><p>解压安装包</p>
+<blockquote>
+<p>tar -zxvf jdk-7u45-linux-x64.tar.gz -C apps/</p>
+</blockquote>
+<p>然后修改环境变量</p>
+<blockquote>
+<p>vi /etc/profile</p>
+</blockquote>
+<p>在文件最后添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/root/apps/jdk1.7.0_45</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin</div></pre></td></tr></table></figure></p>
+<p>保存退出</p>
+<p>然后重新加载环境变量</p>
+<blockquote>
+<p>source /etc/profile</p>
+</blockquote>
+<h1 id="装mysql"><a href="#装mysql" class="headerlink" title="装mysql"></a>装mysql</h1><h1 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h1><ol>
+<li>上传tomcat包</li>
+<li>解压</li>
+<li>启动</li>
+<li>测试访问</li>
+</ol>
 
       
     </div>
@@ -540,7 +560,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -604,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#YUM的常用命令"><span class="nav-number">1.</span> <span class="nav-text">YUM的常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置本地yum源"><span class="nav-number">2.</span> <span class="nav-text">配置本地yum源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#YUM的常用命令"><span class="nav-number">1.</span> <span class="nav-text">YUM的常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置本地yum源"><span class="nav-number">2.</span> <span class="nav-text">配置本地yum源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装jdk"><span class="nav-number">3.</span> <span class="nav-text">安装jdk</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#装mysql"><span class="nav-number">4.</span> <span class="nav-text">装mysql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装tomcat"><span class="nav-number">5.</span> <span class="nav-text">安装tomcat</span></a></li></ol></div>
             
 
           </div>

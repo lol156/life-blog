@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://signalfire2017.com/"/>
-  <updated>2017-11-04T15:06:41.385Z</updated>
+  <updated>2017-11-05T15:47:51.172Z</updated>
   <id>http://signalfire2017.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux笔记-修改语言</title>
+    <link href="http://signalfire2017.com/2017/11/05/linux%E7%AC%94%E8%AE%B0-%E4%BF%AE%E6%94%B9%E8%AF%AD%E8%A8%80/"/>
+    <id>http://signalfire2017.com/2017/11/05/linux笔记-修改语言/</id>
+    <published>2017-11-05T15:39:47.000Z</published>
+    <updated>2017-11-05T15:47:51.172Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h1><p>centos7</p>
+<h1 id="查看系统是否有安装中文语言包-（列出所有可用的公共语言环境的名称，包含有zh-CN）"><a href="#查看系统是否有安装中文语言包-（列出所有可用的公共语言环境的名称，包含有zh-CN）" class="headerlink" title="查看系统是否有安装中文语言包 （列出所有可用的公共语言环境的名称，包含有zh_CN）"></a>查看系统是否有安装中文语言包 （列出所有可用的公共语言环境的名称，包含有zh_CN）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[vagrant@mysql1 ~]$ locale -a |grep &quot;zh_CN&quot;</div><div class="line">zh_CN</div><div class="line">zh_CN.gb18030</div><div class="line">zh_CN.gb2312</div><div class="line">zh_CN.gbk</div><div class="line">zh_CN.utf8</div></pre></td></tr></table></figure>
+<p>若发现以上几项，说明系统已安装中文语言包，无需再安装</p>
+<h1 id="安装中文包"><a href="#安装中文包" class="headerlink" title="安装中文包"></a>安装中文包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@iZj6cbstl2n6r280a27eppZ tmp]# yum groupinstall &quot;fonts&quot;</div></pre></td></tr></table></figure>
+<h1 id="修改i18n国际化和locale-conf本土化配置文件"><a href="#修改i18n国际化和locale-conf本土化配置文件" class="headerlink" title="修改i18n国际化和locale.conf本土化配置文件"></a>修改i18n国际化和locale.conf本土化配置文件</h1><h2 id="先查看系统语言环境"><a href="#先查看系统语言环境" class="headerlink" title="先查看系统语言环境"></a>先查看系统语言环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">[vagrant@mysql1 ~]$ locale</div><div class="line">LANG=en_US.UTF-8</div><div class="line">LC_CTYPE=&quot;en_US.UTF-8&quot;</div><div class="line">LC_NUMERIC=&quot;en_US.UTF-8&quot;</div><div class="line">LC_TIME=&quot;en_US.UTF-8&quot;</div><div class="line">LC_COLLATE=&quot;en_US.UTF-8&quot;</div><div class="line">LC_MONETARY=&quot;en_US.UTF-8&quot;</div><div class="line">LC_MESSAGES=&quot;en_US.UTF-8&quot;</div><div class="line">LC_PAPER=&quot;en_US.UTF-8&quot;</div><div class="line">LC_NAME=&quot;en_US.UTF-8&quot;</div><div class="line">LC_ADDRESS=&quot;en_US.UTF-8&quot;</div><div class="line">LC_TELEPHONE=&quot;en_US.UTF-8&quot;</div><div class="line">LC_MEASUREMENT=&quot;en_US.UTF-8&quot;</div><div class="line">LC_IDENTIFICATION=&quot;en_US.UTF-8&quot;</div><div class="line">LC_ALL=</div></pre></td></tr></table></figure>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vi /etc/locale.conf </div><div class="line">或</div><div class="line">vi /etc/sysconfig/i18n (有些帖子上说修改这个,但是我的linux没有这个文件)</div></pre></td></tr></table></figure>
+<p>虽然安装了中文语言包但本机的语言环境并不是中文，先修改i18n配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[root@iZj6cbstl2n6r280a27eppZ sysconfig]# vim /etc/sysconfig/i18n</div><div class="line"></div><div class="line">LANG=&quot;zh_CN.UTF-8&quot;</div><div class="line">LC_ALL=&quot;zh_CN.UTF-8&quot;</div><div class="line"></div><div class="line">[root@iZj6cbstl2n6r280a27eppZ sysconfig]# source /etc/sysconfig/i18n</div><div class="line"></div><div class="line">[root@iZj6cbstl2n6r280a27eppZ sysconfig]# vim /etc/locale.conf</div><div class="line"></div><div class="line">LANG=&quot;zh_CN.UTF-8&quot;</div><div class="line"></div><div class="line"> [root@iZj6cbstl2n6r280a27eppZ sysconfig]# source   /etc/locale.conf</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;版本&quot;&gt;&lt;a href=&quot;#版本&quot; class=&quot;headerlink&quot; title=&quot;版本&quot;&gt;&lt;/a&gt;版本&lt;/h1&gt;&lt;p&gt;centos7&lt;/p&gt;
+&lt;h1 id=&quot;查看系统是否有安装中文语言包-（列出所有可用的公共语言环境的名称，包含有zh-CN）&quot;&gt;&lt;a hre
+    
+    </summary>
+    
+      <category term="学习" scheme="http://signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="linux" scheme="http://signalfire2017.com/tags/linux/"/>
+    
+      <category term="centos7" scheme="http://signalfire2017.com/tags/centos7/"/>
+    
+  </entry>
   
   <entry>
     <title>vagrant 创建virtualBox虚拟机</title>
@@ -472,6 +504,58 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
   </entry>
   
   <entry>
+    <title>大数据02-02 linux命令继续学习 yum</title>
+    <link href="http://signalfire2017.com/2017/11/01/%E5%A4%A7%E6%95%B0%E6%8D%AE02-02-linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0-yum/"/>
+    <id>http://signalfire2017.com/2017/11/01/大数据02-02-linux命令继续学习-yum/</id>
+    <published>2017-11-01T15:50:39.000Z</published>
+    <updated>2017-11-05T11:03:41.257Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="YUM的常用命令"><a href="#YUM的常用命令" class="headerlink" title="YUM的常用命令"></a>YUM的常用命令</h1><p>安装httpd并确认安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum instll -y httpd</div></pre></td></tr></table></figure></p>
+<p>列出所有可用的package和package组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum list</div></pre></td></tr></table></figure></p>
+<p>清除所有缓冲数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum clean all</div></pre></td></tr></table></figure></p>
+<p>列出一个包所有依赖的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum deplist httpd</div></pre></td></tr></table></figure></p>
+<p>删除httpd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum remove httpd</div></pre></td></tr></table></figure></p>
+<h1 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h1><p>cd /etc/yum.repos.d </p>
+<h1 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h1><p>解压安装包</p>
+<blockquote>
+<p>tar -zxvf jdk-7u45-linux-x64.tar.gz -C apps/</p>
+</blockquote>
+<p>然后修改环境变量</p>
+<blockquote>
+<p>vi /etc/profile</p>
+</blockquote>
+<p>在文件最后添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/root/apps/jdk1.7.0_45</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin</div></pre></td></tr></table></figure></p>
+<p>保存退出</p>
+<p>然后重新加载环境变量</p>
+<blockquote>
+<p>source /etc/profile</p>
+</blockquote>
+<h1 id="装mysql"><a href="#装mysql" class="headerlink" title="装mysql"></a>装mysql</h1><h1 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h1><ol>
+<li>上传tomcat包</li>
+<li>解压</li>
+<li>启动</li>
+<li>测试访问</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;YUM的常用命令&quot;&gt;&lt;a href=&quot;#YUM的常用命令&quot; class=&quot;headerlink&quot; title=&quot;YUM的常用命令&quot;&gt;&lt;/a&gt;YUM的常用命令&lt;/h1&gt;&lt;p&gt;安装httpd并确认安装&lt;br&gt;&lt;figure class=&quot;highlight plain
+    
+    </summary>
+    
+      <category term="学习" scheme="http://signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="大数据" scheme="http://signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="linux" scheme="http://signalfire2017.com/tags/linux/"/>
+    
+      <category term="centos7" scheme="http://signalfire2017.com/tags/centos7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo next 搜索 algolia</title>
     <link href="http://signalfire2017.com/2017/10/30/hexo-next-%E6%90%9C%E7%B4%A2-algolia/"/>
     <id>http://signalfire2017.com/2017/10/30/hexo-next-搜索-algolia/</id>
@@ -767,7 +851,7 @@ chkconfig iptables off
     <link href="http://signalfire2017.com/2017/10/29/%E5%A4%A7%E6%95%B0%E6%8D%AE02-01%20linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0/"/>
     <id>http://signalfire2017.com/2017/10/29/大数据02-01 linux命令继续学习/</id>
     <published>2017-10-29T14:30:38.000Z</published>
-    <updated>2017-11-04T15:28:27.718Z</updated>
+    <updated>2017-11-05T11:03:44.345Z</updated>
     
     <content type="html"><![CDATA[<h1 id="vmare克隆后修改地址问题"><a href="#vmare克隆后修改地址问题" class="headerlink" title="vmare克隆后修改地址问题"></a>vmare克隆后修改地址问题</h1><p>解决克隆后eth0不见的问题</p>
 <p>直接修改  /etc/sysconfig/network-script/ifcfg-eth0<br>删掉UUID  HWADDR<br>配置静态地址<br>然后：<br>修改 /etc/udev/rules.d/70-persistent-net.rules<br>然后 reboot</p>
@@ -862,9 +946,9 @@ per * .rpm
       <category term="工具" scheme="http://signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="vscode" scheme="http://signalfire2017.com/tags/vscode/"/>
-    
       <category term="快捷键" scheme="http://signalfire2017.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+      <category term="vscode" scheme="http://signalfire2017.com/tags/vscode/"/>
     
   </entry>
   
@@ -922,9 +1006,9 @@ per * .rpm
       <category term="工具" scheme="http://signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="快捷键" scheme="http://signalfire2017.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    
       <category term="idea" scheme="http://signalfire2017.com/tags/idea/"/>
+    
+      <category term="快捷键" scheme="http://signalfire2017.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
   </entry>
   
