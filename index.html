@@ -410,8 +410,7 @@
 
       
         
-          
-            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。</p>
+          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。</p>
 <p>awk有3个不同版本: awk、nawk和gawk，未作特别说明，一般指gawk，gawk 是 AWK 的 GNU 版本。</p>
 <p>awk其名称得自于它的创始人 Alfred Aho 、Peter Weinberger 和 Brian Kernighan 姓氏的首个字母。实际上 AWK 的确拥有自己的语言： AWK 程序设计语言 ， 三位创建者已将它正式定义为“样式扫描和处理语言”。它允许您创建简短的程序，这些程序读取输入文件、为数据排序、处理数据、对输入执行计算以及生成报表，还有无数其他的功能。</p>
 <h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><blockquote>
@@ -420,73 +419,13 @@
 <p>尽管操作可能会很复杂，但语法总是这样，其中 pattern 表示 AWK 在数据中查找的内容，而 action 是在找到匹配内容时所执行的一系列命令。花括号（{}）不需要在程序中始终出现，但它们用于根据特定的模式对一系列指令进行分组。 pattern就是要表示的正则表达式，用斜杠括起来。</p>
 <p>awk语言的最基本功能是在文件或者字符串中基于指定规则浏览和抽取信息，awk抽取信息后，才能进行其他文本操作。完整的awk脚本通常用来格式化文本文件中的信息。</p>
 <p>通常，awk是以文件的一行为处理单位的。awk每接收文件的一行，然后执行相应的命令，来处理文本。</p>
-<h2 id="调用awk"><a href="#调用awk" class="headerlink" title="调用awk"></a>调用awk</h2><p>有三种方式调用awk</p>
-<h3 id="1-命令行方式"><a href="#1-命令行方式" class="headerlink" title="1.命令行方式"></a>1.命令行方式</h3><blockquote>
-<p>awk [-F  field-separator]  ‘commands’  input-file(s)<br>其中，commands 是真正awk命令，[-F域分隔符]是可选的。 input-file(s) 是待处理的文件。<br>在awk中，文件的每一行中，由域分隔符分开的每一项称为一个域。通常，在不指名-F域分隔符的情况下，默认的域分隔符是空格。</p>
-</blockquote>
-<h3 id="2-shell脚本方式"><a href="#2-shell脚本方式" class="headerlink" title="2.shell脚本方式"></a>2.shell脚本方式</h3><p>将所有的awk命令插入一个文件，并使awk程序可执行，然后awk命令解释器作为脚本的首行，一遍通过键入脚本名称来调用。<br>相当于shell脚本首行的：#!/bin/sh<br>可以换成：#!/bin/awk</p>
-<h3 id="3-将所有的awk命令插入一个单独文件，然后调用："><a href="#3-将所有的awk命令插入一个单独文件，然后调用：" class="headerlink" title="3.将所有的awk命令插入一个单独文件，然后调用："></a>3.将所有的awk命令插入一个单独文件，然后调用：</h3><blockquote>
-<p>awk -f awk-script-file input-file(s)<br>其中，-f选项加载awk-script-file中的awk脚本，input-file(s)跟上面的是一样的。</p>
-</blockquote>
-<p> 本章重点介绍命令行方式。</p>
-<h2 id="入门实例"><a href="#入门实例" class="headerlink" title="入门实例"></a>入门实例</h2><p>假设last -n 5的输出如下</p>
-<blockquote>
-<p>[root@www ~]# last -n 5 &lt;==仅取出前五行</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">root     pts/1   192.168.1.100  Tue Feb 10 11:21   still logged in</div><div class="line">root     pts/1   192.168.1.100  Tue Feb 10 00:46 - 02:28  (01:41)</div><div class="line">root     pts/1   192.168.1.100  Mon Feb  9 11:41 - 18:30  (06:48)</div><div class="line">dmtsai   pts/1   192.168.1.100  Mon Feb  9 11:41 - 11:41  (00:00)</div><div class="line">root     tty1                   Fri Sep  5 14:09 - 14:10  (00:01)</div></pre></td></tr></table></figure>
-<p>如果只是显示最近登录的5个帐号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#last -n 5 | awk  &apos;&#123;print $1&#125;&apos;</div><div class="line">root</div><div class="line">root</div><div class="line">root</div><div class="line">dmtsai</div><div class="line">root</div></pre></td></tr></table></figure>
-<p>awk工作流程是这样的：读入有’\n’换行符分割的一条记录，然后将记录按指定的域分隔符划分域，填充域，$0则表示所有域,$1表示第一个域,$n表示第n个域。默认域分隔符是”空白键” 或 “[tab]键”,所以$1表示登录用户，$3表示登录用户ip,以此类推。</p>
-<p>如果只是显示/etc/passwd的账户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#cat /etc/passwd |awk  -F &apos;:&apos;  &apos;&#123;print $1&#125;&apos;  </div><div class="line">root</div><div class="line">daemon</div><div class="line">bin</div><div class="line">sys</div></pre></td></tr></table></figure>
-<p>这种是awk+action的示例，每行都会执行action{print $1}。</p>
-<blockquote>
-<p>-F指定域分隔符为’:’。</p>
-</blockquote>
-<p>如果只是显示/etc/passwd的账户和账户对应的shell,而账户与shell之间以tab键分割</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#cat /etc/passwd |awk  -F &apos;:&apos;  &apos;&#123;print $1&quot;\t&quot;$7&#125;&apos;</div><div class="line">root    /bin/bash</div><div class="line">daemon  /bin/sh</div><div class="line">bin     /bin/sh</div><div class="line">sys     /bin/sh</div><div class="line"></div><div class="line">``` </div><div class="line"></div><div class="line">如果只是显示/etc/passwd的账户和账户对应的shell,而账户与shell之间以逗号分割,而且在所有行添加列名name,shell,在最后一行添加&quot;blue,/bin/nosh&quot;。</div></pre></td></tr></table></figure>
-<p>cat /etc/passwd |awk  -F ‘:’  ‘BEGIN {print “name,shell”}  {print $1”,”$7} END {print “blue,/bin/nosh”}’<br>name,shell<br>root,/bin/bash<br>daemon,/bin/sh<br>bin,/bin/sh<br>sys,/bin/sh<br>….<br>blue,/bin/nosh</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">awk工作流程是这样的：先执行BEGING，然后读取文件，读入有/n换行符分割的一条记录，然后将记录按指定的域分隔符划分域，填充域，$0则表示所有域,$1表示第一个域,$n表示第n个域,随后开始执行模式所对应的动作action。接着开始读入第二条记录······直到所有的记录都读完，最后执行END操作。</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">搜索/etc/passwd有root关键字的所有行</div><div class="line"></div><div class="line">&gt; #awk -F: &apos;/root/&apos; /etc/passwd</div><div class="line">root:x:0:0:root:/root:/bin/bash</div><div class="line">这种是pattern的使用示例，匹配了pattern(这里是root)的行才会执行action(没有指定action，默认输出每行的内容)。</div><div class="line"></div><div class="line">搜索支持正则，例如找root开头的: ```awk -F: &apos;/^root/&apos; /etc/passwd</div></pre></td></tr></table></figure>
-<p>搜索/etc/passwd有root关键字的所有行，并显示对应的shell</p>
-<blockquote>
-<h1 id="awk-F-‘-root-print-7-’-etc-passwd"><a href="#awk-F-‘-root-print-7-’-etc-passwd" class="headerlink" title="awk -F: ‘/root/{print $7}’ /etc/passwd"></a>awk -F: ‘/root/{print $7}’ /etc/passwd</h1><p>/bin/bash<br> 这里指定了action{print $7}</p>
-</blockquote>
-<h2 id="awk内置变量"><a href="#awk内置变量" class="headerlink" title="awk内置变量"></a>awk内置变量</h2><p>awk有许多内置变量用来设置环境信息，这些变量可以被改变，下面给出了最常用的一些变量。</p>
-<pre><code>ARGC               命令行参数个数
-ARGV               命令行参数排列
-ENVIRON            支持队列中系统环境变量的使用
-FILENAME           awk浏览的文件名
-FNR                浏览文件的记录数
-FS                 设置输入域分隔符，等价于命令行 -F选项
-NF                 浏览记录的域的个数
-NR                 已读的记录数
-OFS                输出域分隔符
-ORS                输出记录分隔符
-RS                 控制记录分隔符
-</code></pre><p> 此外,$0变量是指整条记录。$1表示当前行的第一个域,$2表示当前行的第二个域,……以此类推。</p>
-<p>统计/etc/passwd:文件名，每行的行号，每行的列数，对应的完整行内容:</p>
-<blockquote>
-<p>#awk  -F ‘:’  ‘{print “filename:” FILENAME “,linenumber:” NR “,columns:” NF “,linecontent:”$0}’ /etc/passwd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">filename:/etc/passwd,linenumber:1,columns:7,linecontent:root:x:0:0:root:/root:/bin/bash</div><div class="line">filename:/etc/passwd,linenumber:2,columns:7,linecontent:daemon:x:1:1:daemon:/usr/sbin:/bin/sh</div><div class="line">filename:/etc/passwd,linenumber:3,columns:7,linecontent:bin:x:2:2:bin:/bin:/bin/sh</div><div class="line">filename:/etc/passwd,linenumber:4,columns:7,linecontent:sys:x:3:3:sys:/dev:/bin/sh</div><div class="line"></div><div class="line">``` </div><div class="line"></div><div class="line">使用printf替代print,可以让代码更加简洁，易读</div><div class="line"></div><div class="line"> &gt; awk  -F &apos;:&apos;  &apos;&#123;printf(&quot;filename:%s,linenumber:%s,columns:%s,linecontent:%s\n&quot;,FILENAME,NR,NF,$0)&#125;&apos; /etc/passwd</div><div class="line"> </div><div class="line"></div><div class="line">## print和printf</div><div class="line">awk中同时提供了print和printf两种打印输出的函数。</div><div class="line"></div><div class="line">其中print函数的参数可以是变量、数值或者字符串。字符串必须用双引号引用，参数用逗号分隔。如果没有逗号，参数就串联在一起而无法区分。这里，逗号的作用与输出文件的分隔符的作用是一样的，只是后者是空格而已。</div><div class="line"></div><div class="line">printf函数，其用法和c语言中printf基本相似,可以格式化字符串,输出复杂时，printf更加好用，代码更易懂。</div><div class="line"></div><div class="line">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% </div><div class="line"></div><div class="line">#  awk编程</div><div class="line"> 变量和赋值</div><div class="line"></div><div class="line">除了awk的内置变量，awk还可以自定义变量。</div><div class="line"></div><div class="line">## 下面统计/etc/passwd的账户人数</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>awk ‘{count++;print $0;} END{print “user count is “, count}’ /etc/passwd<br>root:x:0:0:root:/root:/bin/bash<br>……<br>user count is  40</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">count是自定义变量。之前的action&#123;&#125;里都是只有一个print,其实print只是一个语句，而action&#123;&#125;可以有多个语句，以;号隔开。</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">这里没有初始化count，虽然默认是0，但是妥当的做法还是初始化为0:</div></pre></td></tr></table></figure>
-<p>awk ‘BEGIN {count=0;print “[start]user count is “, count} {count=count+1;print $0;} END{print “[end]user count is “, count}’ /etc/passwd<br>[start]user count is  0<br>root:x:0:0:root:/root:/bin/bash<br>…<br>[end]user count is  40</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">统计某个文件夹下的文件占用的字节数</div></pre></td></tr></table></figure>
-<p>ls -l |awk ‘BEGIN {size=0;} {size=size+$5;} END{print “[end]size is “, size}’<br>[end]size is  8657198</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">如果以M为单位显示:</div></pre></td></tr></table></figure>
-<p>ls -l |awk ‘BEGIN {size=0;} {size=size+$5;} END{print “[end]size is “, size/1024/1024,”M”}’<br>[end]size is  8.25889 M</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">注意，统计不包括文件夹的子目录。</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">### 条件语句</div><div class="line"></div><div class="line"> awk中的条件语句是从C语言中借鉴来的，见如下声明方式：</div></pre></td></tr></table></figure>
-<p>if (expression) {<br>    statement;<br>    statement;<br>    … …<br>}</p>
-<p>if (expression) {<br>    statement;<br>} else {<br>    statement2;<br>}</p>
-<p>if (expression) {<br>    statement1;<br>} else if (expression1) {<br>    statement2;<br>} else {<br>    statement3;<br>}</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">统计某个文件夹下的文件占用的字节数,过滤4096大小的文件(一般都是文件夹):</div></pre></td></tr></table></figure>
-<p>ls -l |awk ‘BEGIN {size=0;print “[start]size is “, size} {if($5!=4096){size=size+$5;}} END{print “[end]size is “, size/1024/1024,”M”}’<br>[end]size is  8.22339 M</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 循环语句</div><div class="line"></div><div class="line">awk中的循环语句同样借鉴于C语言，支持while、do/while、for、break、continue，这些关键字的语义和C语言中的语义完全相同。</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">### 数组</div><div class="line"></div><div class="line">  因为awk中数组的下标可以是数字和字母，数组的下标通常被称为关键字(key)。值和关键字都存储在内部的一张针对key/value应用hash的表格里。由于hash不是顺序存储，因此在显示数组内容时会发现，它们并不是按照你预料的顺序显示出来的。数组和变量一样，都是在使用时自动创建的，awk也同样会自动判断其存储的是数字还是字符串。一般而言，awk中的数组用来从记录中收集信息，可以用于计算总和、统计单词以及跟踪模板被匹配的次数等等。</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">显示/etc/passwd的账户</div></pre></td></tr></table></figure>
-<p>awk -F ‘:’ ‘BEGIN {count=0;} {name[count] = $1;count++;}; END{for (i = 0; i &lt; NR; i++) print i, name[i]}’ /etc/passwd<br>0 root<br>1 daemon<br>2 bin<br>3 sys<br>4 sync<br>5 games<br>……</p>
-<p>```<br>这里使用for循环遍历数组</p>
-<p>awk编程的内容极多，这里只罗列简单常用的用法，更多请参考 <a href="http://www.gnu.org/software/gawk/manual/gawk.html" target="_blank" rel="external">http://www.gnu.org/software/gawk/manual/gawk.html</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/06/大数据02-05-shell编程-awk命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -679,7 +618,7 @@ RS                 控制记录分隔符
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://signalfire2017.com/2017/11/06/大数据02-03-shell编程/">
+    <link itemprop="mainEntityOfPage" href="http://signalfire2017.com/2017/11/06/大数据02-03 shell编程语法讲解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="signalFire">
@@ -698,7 +637,7 @@ RS                 控制记录分隔符
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/06/大数据02-03-shell编程/" itemprop="url">大数据02-03 shell编程语法讲解</a></h1>
+                <a class="post-title-link" href="/2017/11/06/大数据02-03 shell编程语法讲解/" itemprop="url">大数据02-03 shell编程语法讲解</a></h1>
         
 
         <div class="post-meta">
@@ -771,8 +710,7 @@ RS                 控制记录分隔符
 
       
         
-          
-            <h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h2 id="系统变量"><a href="#系统变量" class="headerlink" title="系统变量"></a>系统变量</h2><ul>
+          <h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h2 id="系统变量"><a href="#系统变量" class="headerlink" title="系统变量"></a>系统变量</h2><ul>
 <li>$HOME</li>
 <li>$PWD</li>
 <li>$SHELL</li>
@@ -788,130 +726,13 @@ RS                 控制记录分隔符
 <p>export 变量名 可把变量提升为全局环境变量，可供其他shell程序使用</p>
 </blockquote>
 <p>将命令的返回值赋给变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A=`ls -la` 反引号，运行里面的命令，并把结果返回给变量A</div><div class="line">A=$(ls -la) 等价于反引号</div></pre></td></tr></table></figure>
-<h2 id="shell中的特殊变量"><a href="#shell中的特殊变量" class="headerlink" title="shell中的特殊变量"></a>shell中的特殊变量</h2><ul>
-<li>$? 表示上一个命令退出的状态  true 0 false 1 错误127</li>
-<li>$$ 表示当前进程编号</li>
-<li>$0 表示当前脚本名称</li>
-<li>$n 表示n位置的输入参数（n代表数字，n&gt;=1）</li>
-<li>$#     表示参数的个数，常用于循环</li>
-<li>$*和$@ 都表示参数列表 <h3 id="与-区别"><a href="#与-区别" class="headerlink" title="$*与$@区别"></a>$*与$@区别</h3></li>
-<li>$* 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号” “包含时，都以$1  $2  … $n 的形式输出所有参数  </li>
-<li>当它们被双引号” “包含时，”$*” 会将所有的参数作为一个整体，以”$1 $2 … $n”的形式输出所有参数；”$@” 会将各个参数分开，以”$1” “$2” … “$n” 的形式输出所有参数</li>
-</ul>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><blockquote>
-<p>格式 :expr m + n 或$((m+n)) 注意expr运算符间要有空格</p>
-</blockquote>
-<p>例如计算（2 ＋3 ）×4 的值<br>1 .分步计算    S=<code>expr 2 + 3</code>    expr $S * 4<br>2.一步完成计算<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">expr `expr 2 + 3 ` \* 4</div><div class="line"><span class="built_in">echo</span> `expr \`expr 2 + 3\` \* 4`</div><div class="line">或</div><div class="line">$(((2+3)*4))</div></pre></td></tr></table></figure></p>
-<h1 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h1><h2 id="第一种："><a href="#第一种：" class="headerlink" title="第一种："></a>第一种：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> N <span class="keyword">in</span> 1 2 3</div><div class="line"><span class="keyword">do</span></div><div class="line">	<span class="built_in">echo</span> <span class="variable">$N</span></div><div class="line"><span class="keyword">done</span></div><div class="line">或</div><div class="line"><span class="keyword">for</span> N <span class="keyword">in</span> 1 2 3; <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$N</span>; <span class="keyword">done</span></div><div class="line">或</div><div class="line"><span class="keyword">for</span> N <span class="keyword">in</span> &#123;1..3&#125;; <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$N</span>; <span class="keyword">done</span></div></pre></td></tr></table></figure>
-<h2 id="第二种："><a href="#第二种：" class="headerlink" title="第二种："></a>第二种：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> ((i = 0; i &lt;= 5; i++))</div><div class="line"><span class="keyword">do</span></div><div class="line">	<span class="built_in">echo</span> <span class="string">"welcome <span class="variable">$i</span> times"</span></div><div class="line"><span class="keyword">done</span></div><div class="line">或</div><div class="line"><span class="keyword">for</span> ((i = 0; i &lt;= 5; i++)); <span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">"welcome <span class="variable">$i</span> times"</span>; <span class="keyword">done</span></div></pre></td></tr></table></figure>
-<h1 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h1><h2 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> expression</div><div class="line"><span class="keyword">do</span></div><div class="line"><span class="built_in">command</span></div><div class="line">…</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
-<h2 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">i=1</div><div class="line"><span class="keyword">while</span> ((i&lt;=3))</div><div class="line"><span class="keyword">do</span></div><div class="line">  <span class="built_in">echo</span> <span class="variable">$i</span></div><div class="line">  <span class="built_in">let</span> i++</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
-<h1 id="case语句"><a href="#case语句" class="headerlink" title="case语句"></a>case语句</h1><p>格式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></div><div class="line">start)</div><div class="line">	<span class="built_in">echo</span> <span class="string">"starting"</span></div><div class="line">	;;</div><div class="line">stop)</div><div class="line">	<span class="built_in">echo</span> <span class="string">"stoping"</span></div><div class="line">	;;</div><div class="line">*)</div><div class="line">	<span class="built_in">echo</span> <span class="string">"Usage: &#123;start|stop&#125; “</span></div><div class="line"><span class="string">esac</span></div></pre></td></tr></table></figure></p>
-<h1 id="read命令"><a href="#read命令" class="headerlink" title="read命令"></a>read命令</h1><p>read -p(提示语句)-n(字符个数) -t(等待时间)<br>    read -p “please input your name: “ NAME</p>
-<p>使用示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[vagrant@mysql1 ~]$ read -p &quot;please enter a number:&quot; numb</div><div class="line">please enter a number:1</div><div class="line">[vagrant@mysql1 ~]$ echo $numb</div><div class="line">1</div><div class="line">[vagrant@mysql1 ~]$</div></pre></td></tr></table></figure></p>
-<h1 id="if判断"><a href="#if判断" class="headerlink" title="if判断"></a>if判断</h1><p>语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> condition </div><div class="line"><span class="keyword">then</span> </div><div class="line">    statements</div><div class="line">[<span class="keyword">elif</span> condition </div><div class="line">    <span class="keyword">then</span> statements. ..] </div><div class="line">[<span class="keyword">else</span> </div><div class="line">    statements ] </div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure></p>
-<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><p>[ condition ] <strong>(注意condition前后要有空格)</strong></p>
-<p>#非空返回true，可使用$?验证（0为true，&gt;1为false）<br>[ test ]</p>
-<p>#空返回false<br>[  ]</p>
-<blockquote>
-<p>[ condition ] &amp;&amp; echo OK || echo notok</p>
-</blockquote>
-<p>条件满足，执行后面的语句 不满足执行 || 后面的语句</p>
-<h1 id="常用判断条件"><a href="#常用判断条件" class="headerlink" title="常用判断条件"></a>常用判断条件</h1><ul>
-<li>= 字符串比较</li>
-<li>-lt 小于</li>
-<li>-le 小于等于</li>
-<li>-eq 等于</li>
-<li>-gt 大于</li>
-<li>-ge 大于等于</li>
-<li><p>-ne 不等于</p>
-</li>
-<li><p>-r 有读的权限</p>
-</li>
-<li>-w 有写的权限</li>
-<li>-x 有执行的权限</li>
-<li><strong>-f 文件存在并且是一个常规的文件</strong></li>
-<li>-s 文件存在且不为空</li>
-<li>-d 文件存在并是一个目录</li>
-<li>-b文件存在并且是一个块设备</li>
-<li>-L 文件存在并且是一个链接</li>
-</ul>
-<h1 id="Shell自定义函数"><a href="#Shell自定义函数" class="headerlink" title="Shell自定义函数"></a>Shell自定义函数</h1><p>语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> [ <span class="keyword">function</span> ] funname [()]</div><div class="line">&#123;</div><div class="line">    action;</div><div class="line">    [<span class="built_in">return</span> int;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>三种声明方式:</p>
-<ul>
-<li>function start()  </li>
-<li>function start </li>
-<li>start()</li>
-</ul>
-<p>注意</p>
-<ol>
-<li>必须在调用函数地方之前，先声明函数，shell脚本是逐行运行。不会像其它语言一样先预编译</li>
-<li>函数返回值，只能通过$? 系统变量获得，可以显示加：return 返回，如果不加，将以最后一条命令运行结果，作为返回值。 return后跟数值n(0-255)</li>
-</ol>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">fSum 3 2;</div><div class="line"><span class="keyword">function</span> fSum()</div><div class="line">&#123;</div><div class="line">    <span class="built_in">echo</span> <span class="variable">$1</span>,<span class="variable">$2</span>;</div><div class="line">    <span class="built_in">return</span> $((<span class="variable">$1</span>+<span class="variable">$2</span>));</div><div class="line">&#125;</div><div class="line">fSum 5 7;</div><div class="line">total=$?;</div><div class="line"><span class="built_in">echo</span> <span class="variable">$total</span>,$?;</div></pre></td></tr></table></figure>
-<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[vagrant@mysql1 ~]$ sh test </div><div class="line">test: line 2: fSum: command not found</div><div class="line">5,7</div><div class="line">12,0</div></pre></td></tr></table></figure></p>
-<h1 id="脚本调试"><a href="#脚本调试" class="headerlink" title="脚本调试"></a>脚本调试</h1><ul>
-<li>sh -vx helloWorld.sh</li>
-<li>或者在脚本中增加set -x</li>
-</ul>
-<h1 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h1><p>cut命令可以从一个文本文件或者文本流中提取文本列。</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cut -d&apos;分隔字符&apos; -f fields &lt;==用于有特定分隔字符</div><div class="line">cut -c 字符区间            &lt;==用于排列整齐的信息</div></pre></td></tr></table></figure>
-<ul>
-<li>-d  ：后面接分隔字符。与 -f 一起使用；</li>
-<li>-f  ：依据 -d 的分隔字符将一段信息分割成为数段，用 -f 取出第几段的意思；</li>
-<li>-c  ：以字符 (characters) 的单位取出固定字符区间；</li>
-</ul>
-<h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><h3 id="PATH-变量如下"><a href="#PATH-变量如下" class="headerlink" title="PATH 变量如下"></a>PATH 变量如下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@www ~]# echo $PATH</div><div class="line">/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/X11R6/bin:/usr/games</div><div class="line"># 1 | 2       | 3   | 4       | 5            | 6            | 7</div></pre></td></tr></table></figure>
-<h3 id="将-PATH-变量取出，我要找出第五个路径。"><a href="#将-PATH-变量取出，我要找出第五个路径。" class="headerlink" title="将 PATH 变量取出，我要找出第五个路径。"></a>将 PATH 变量取出，我要找出第五个路径。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#echo $PATH | cut -d &apos;:&apos; -f 5</div><div class="line">/usr/local/bin</div></pre></td></tr></table></figure>
-<h3 id="将-PATH-变量取出，我要找出第三和第五个路径。"><a href="#将-PATH-变量取出，我要找出第三和第五个路径。" class="headerlink" title="将 PATH 变量取出，我要找出第三和第五个路径。"></a>将 PATH 变量取出，我要找出第三和第五个路径。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#echo $PATH | cut -d &apos;:&apos; -f 3,5</div><div class="line">/sbin:/usr/local/bin</div></pre></td></tr></table></figure>
-<h3 id="将-PATH-变量取出，我要找出第三到最后一个路径。"><a href="#将-PATH-变量取出，我要找出第三到最后一个路径。" class="headerlink" title="将 PATH 变量取出，我要找出第三到最后一个路径。"></a>将 PATH 变量取出，我要找出第三到最后一个路径。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo $PATH | cut -d &apos;:&apos; -f 3-</div><div class="line">/sbin:/usr/sbin:/usr/local/bin:/usr/X11R6/bin:/usr/games</div></pre></td></tr></table></figure>
-<h3 id="将-PATH-变量取出，我要找出第一到第三个路径。"><a href="#将-PATH-变量取出，我要找出第一到第三个路径。" class="headerlink" title="将 PATH 变量取出，我要找出第一到第三个路径。"></a>将 PATH 变量取出，我要找出第一到第三个路径。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#echo $PATH | cut -d &apos;:&apos; -f 1-3</div><div class="line">/bin:/usr/bin:/sbin:</div></pre></td></tr></table></figure>
-<h3 id="将-PATH-变量取出，我要找出第一到第三，还有第五个路径。"><a href="#将-PATH-变量取出，我要找出第一到第三，还有第五个路径。" class="headerlink" title="将 PATH 变量取出，我要找出第一到第三，还有第五个路径。"></a>将 PATH 变量取出，我要找出第一到第三，还有第五个路径。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo $PATH | cut -d &apos;:&apos; -f 1-3,5</div><div class="line">/bin:/usr/bin:/sbin:/usr/local/bin</div></pre></td></tr></table></figure>
-<h2 id="实用例子-只显示-etc-passwd的用户和shell"><a href="#实用例子-只显示-etc-passwd的用户和shell" class="headerlink" title="实用例子:只显示/etc/passwd的用户和shell"></a>实用例子:只显示/etc/passwd的用户和shell</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#cat /etc/passwd | cut -d &apos;:&apos; -f 1,7 </div><div class="line">root:/bin/bash</div><div class="line">daemon:/bin/sh</div><div class="line">bin:/bin/sh</div></pre></td></tr></table></figure>
-<h1 id="sort命令"><a href="#sort命令" class="headerlink" title="sort命令"></a>sort命令</h1><p>sort 命令对 File 参数指定的文件中的行排序，并将结果写到标准输出。如果 File 参数指定多个文件，那么 sort 命令将这些文件连接起来，并当作一个文件进行排序。</p>
-<h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><p><code>[root@www ~]# sort [-fbMnrtuk] [file or stdin]</code><br>选项与参数：</p>
-<ul>
-<li>-f  ：忽略大小写的差异，例如 A 与 a 视为编码相同；</li>
-<li>-b  ：忽略最前面的空格符部分；</li>
-<li>-M  ：以月份的名字来排序，例如 JAN, DEC 等等的排序方法；</li>
-<li>-n  ：使用『纯数字』进行排序(默认是以文字型态来排序的)；</li>
-<li>-r  ：反向排序；</li>
-<li>-u  ：就是 uniq ，相同的数据中，仅出现一行代表；</li>
-<li>-t  ：分隔符，默认是用 [tab] 键来分隔；</li>
-<li>-k  ：以那个区间 (field) 来进行排序的意思</li>
-</ul>
-<h2 id="对-etc-passwd-的账号进行排序"><a href="#对-etc-passwd-的账号进行排序" class="headerlink" title="对/etc/passwd 的账号进行排序"></a>对/etc/passwd 的账号进行排序</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@www ~]<span class="comment"># cat /etc/passwd | sort</span></div><div class="line">adm:x:3:4:adm:/var/adm:/sbin/nologin</div><div class="line">apache:x:48:48:Apache:/var/www:/sbin/nologin</div><div class="line">bin:x:1:1:bin:/bin:/sbin/nologin</div><div class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</div></pre></td></tr></table></figure>
-<p>sort 是默认以第一个数据来排序，而且默认是以字符串形式来排序,所以由字母 a 开始升序排序。</p>
-<h2 id="etc-passwd-内容是以-来分隔的，我想以第三栏来排序，该如何"><a href="#etc-passwd-内容是以-来分隔的，我想以第三栏来排序，该如何" class="headerlink" title="/etc/passwd 内容是以 : 来分隔的，我想以第三栏来排序，该如何"></a>/etc/passwd 内容是以 : 来分隔的，我想以第三栏来排序，该如何</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@www ~]# cat /etc/passwd | sort -t &apos;:&apos; -k 3</div><div class="line">root:x:0:0:root:/root:/bin/bash</div><div class="line">uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin</div><div class="line">operator:x:11:0:operator:/root:/sbin/nologin</div><div class="line">bin:x:1:1:bin:/bin:/sbin/nologin</div><div class="line">games:x:12:100:games:/usr/games:/sbin/nologin</div></pre></td></tr></table></figure>
-<h2 id="默认是以字符串来排序的，如果想要使用数字排序："><a href="#默认是以字符串来排序的，如果想要使用数字排序：" class="headerlink" title="默认是以字符串来排序的，如果想要使用数字排序："></a>默认是以字符串来排序的，如果想要使用数字排序：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cat /etc/passwd | sort -t &apos;:&apos; -k 3n</div><div class="line">root:x:0:0:root:/root:/bin/bash</div><div class="line">daemon:x:1:1:daemon:/usr/sbin:/bin/sh</div><div class="line">bin:x:2:2:bin:/bin:/bin/sh</div></pre></td></tr></table></figure>
-<h2 id="默认是升序排序，如果要倒序排序，如下"><a href="#默认是升序排序，如果要倒序排序，如下" class="headerlink" title="默认是升序排序，如果要倒序排序，如下"></a>默认是升序排序，如果要倒序排序，如下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cat /etc/passwd | sort -t &apos;:&apos; -k 3nr</div><div class="line">nobody:x:65534:65534:nobody:/nonexistent:/bin/sh</div><div class="line">ntp:x:106:113::/home/ntp:/bin/false</div><div class="line">messagebus:x:105:109::/var/run/dbus:/bin/false</div><div class="line">sshd:x:104:65534::/var/run/sshd:/usr/sbin/nologin</div></pre></td></tr></table></figure>
-<h2 id="如果要对-etc-passwd-先以第六个域的第2个字符到第4个字符进行正向排序，再基于第一个域进行反向排序。"><a href="#如果要对-etc-passwd-先以第六个域的第2个字符到第4个字符进行正向排序，再基于第一个域进行反向排序。" class="headerlink" title="如果要对/etc/passwd,先以第六个域的第2个字符到第4个字符进行正向排序，再基于第一个域进行反向排序。"></a>如果要对/etc/passwd,先以第六个域的第2个字符到第4个字符进行正向排序，再基于第一个域进行反向排序。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cat /etc/passwd |  sort -t&apos;:&apos; -k 6.2,6.4 -k 1r      </div><div class="line">sync:x:4:65534:sync:/bin:/bin/sync</div><div class="line">proxy:x:13:13:proxy:/bin:/bin/sh</div><div class="line">bin:x:2:2:bin:/bin:/bin/sh</div><div class="line">sys:x:3:3:sys:/dev:/bin/sh</div></pre></td></tr></table></figure>
-<h2 id="查看-etc-passwd有多少个shell-对-etc-passwd的第七个域进行排序，然后去重"><a href="#查看-etc-passwd有多少个shell-对-etc-passwd的第七个域进行排序，然后去重" class="headerlink" title="查看/etc/passwd有多少个shell:对/etc/passwd的第七个域进行排序，然后去重:"></a>查看/etc/passwd有多少个shell:对/etc/passwd的第七个域进行排序，然后去重:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cat /etc/passwd |  sort -t&apos;:&apos; -k 7 -u</div><div class="line">root:x:0:0:root:/root:/bin/bash</div><div class="line">syslog:x:101:102::/home/syslog:/bin/false</div><div class="line">daemon:x:1:1:daemon:/usr/sbin:/bin/sh</div><div class="line">sync:x:4:65534:sync:/bin:/bin/sync</div><div class="line">sshd:x:104:65534::/var/run/sshd:/usr/sbin/nologin</div></pre></td></tr></table></figure>
-<h1 id="uniq去重命令"><a href="#uniq去重命令" class="headerlink" title="uniq去重命令"></a>uniq去重命令</h1><p> uniq命令可以去除排序过的文件中的重复行，因此uniq经常和sort合用。也就是说，为了使uniq起作用，所有的重复行必须是相邻的。</p>
-<h2 id="uniq语法"><a href="#uniq语法" class="headerlink" title="uniq语法"></a>uniq语法</h2><p><code>[root@www ~]# uniq [-icu]</code><br>选项与参数：</p>
-<ul>
-<li>-i   ：忽略大小写字符的不同；</li>
-<li>-c  ：进行计数</li>
-<li>-u  ：只显示唯一的行</li>
-</ul>
-<p>testfile的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cat testfile</div><div class="line">hello</div><div class="line">world</div><div class="line">friend</div><div class="line">hello</div><div class="line">world</div><div class="line">hello</div></pre></td></tr></table></figure></p>
-<p>直接删除未经排序的文件，将会发现没有任何行被删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#uniq testfile  </div><div class="line">hello</div><div class="line">world</div><div class="line">friend</div><div class="line">hello</div><div class="line">world</div><div class="line">hello</div></pre></td></tr></table></figure></p>
-<p>排序文件，默认是去重<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#cat testfile | sort |uniq</div><div class="line">friend</div><div class="line">hello</div><div class="line">world</div></pre></td></tr></table></figure></p>
-<p>排序之后删除了重复行，同时在行首位置输出该行重复的次数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#sort testfile | uniq -c</div><div class="line">1 friend</div><div class="line">3 hello</div><div class="line">2 world</div></pre></td></tr></table></figure></p>
-<p>仅显示存在重复的行，并在行首显示该行重复的次数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#sort testfile | uniq -dc</div><div class="line">3 hello</div><div class="line">2 world</div></pre></td></tr></table></figure></p>
-<p>仅显示不重复的行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sort testfile | uniq -u</div><div class="line">friend</div></pre></td></tr></table></figure></p>
-<h1 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h1><h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><p><code>[root@www ~]# wc [-lwm]</code><br>选项与参数：</p>
-<ul>
-<li>-l  ：仅列出行；</li>
-<li>-w  ：仅列出多少字(英文单字)；</li>
-<li>-m  ：多少字符；<h2 id="默认使用wc统计-etc-passwd"><a href="#默认使用wc统计-etc-passwd" class="headerlink" title="默认使用wc统计/etc/passwd"></a>默认使用wc统计/etc/passwd</h2></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#wc /etc/passwd</div><div class="line">40   45 1719 /etc/passwd</div><div class="line">40是行数，45是单词数，1719是字节数</div></pre></td></tr></table></figure>
-<p>wc的命令比较简单使用，每个参数使用如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#wc -l /etc/passwd   #统计行数，在对记录数时，很常用</div><div class="line">40 /etc/passwd       #表示系统有40个账户</div><div class="line"></div><div class="line">#wc -w /etc/passwd  #统计单词出现次数</div><div class="line">45 /etc/passwd</div><div class="line"></div><div class="line">#wc -m /etc/passwd  #统计文件的字符数</div><div class="line">1719</div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/06/大数据02-03 shell编程语法讲解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
