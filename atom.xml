@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>名字待定</title>
   
-  <link href="/life/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://signalfire2017.com/life/"/>
+  <link href="http://life.signalfire2017.com/"/>
   <updated>2017-11-06T16:13:56.015Z</updated>
-  <id>http://signalfire2017.com/life/</id>
+  <id>http://life.signalfire2017.com/</id>
   
   <author>
     <name>signalFire</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>大数据02-05-shell编程-awk命令</title>
-    <link href="http://signalfire2017.com/life/2017/11/06/%E5%A4%A7%E6%95%B0%E6%8D%AE02-05-shell%E7%BC%96%E7%A8%8B-awk%E5%91%BD%E4%BB%A4/"/>
-    <id>http://signalfire2017.com/life/2017/11/06/大数据02-05-shell编程-awk命令/</id>
+    <link href="http://life.signalfire2017.com/2017/11/06/%E5%A4%A7%E6%95%B0%E6%8D%AE02-05-shell%E7%BC%96%E7%A8%8B-awk%E5%91%BD%E4%BB%A4/"/>
+    <id>http://life.signalfire2017.com/2017/11/06/大数据02-05-shell编程-awk命令/</id>
     <published>2017-11-06T15:25:05.000Z</published>
     <updated>2017-11-06T16:13:56.015Z</updated>
     
@@ -113,23 +113,23 @@ RS                 控制记录分隔符
     
     </summary>
     
-      <category term="学习" scheme="http://signalfire2017.com/life/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://life.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="大数据" scheme="http://signalfire2017.com/life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://life.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="linux" scheme="http://signalfire2017.com/life/tags/linux/"/>
+      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
     
-      <category term="centos7" scheme="http://signalfire2017.com/life/tags/centos7/"/>
+      <category term="centos7" scheme="http://life.signalfire2017.com/tags/centos7/"/>
     
-      <category term="linux命令" scheme="http://signalfire2017.com/life/tags/linux%E5%91%BD%E4%BB%A4/"/>
+      <category term="linux命令" scheme="http://life.signalfire2017.com/tags/linux%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>大数据02-04-shell编程-sed命令</title>
-    <link href="http://signalfire2017.com/life/2017/11/06/%E5%A4%A7%E6%95%B0%E6%8D%AE02-04-shell%E7%BC%96%E7%A8%8B-sed%E5%91%BD%E4%BB%A4/"/>
-    <id>http://signalfire2017.com/life/2017/11/06/大数据02-04-shell编程-sed命令/</id>
+    <link href="http://life.signalfire2017.com/2017/11/06/%E5%A4%A7%E6%95%B0%E6%8D%AE02-04-shell%E7%BC%96%E7%A8%8B-sed%E5%91%BD%E4%BB%A4/"/>
+    <id>http://life.signalfire2017.com/2017/11/06/大数据02-04-shell编程-sed命令/</id>
     <published>2017-11-06T15:02:56.000Z</published>
     <updated>2017-11-06T16:13:52.587Z</updated>
     
@@ -229,23 +229,23 @@ RS                 控制记录分隔符
     
     </summary>
     
-      <category term="学习" scheme="http://signalfire2017.com/life/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://life.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="大数据" scheme="http://signalfire2017.com/life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://life.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="linux" scheme="http://signalfire2017.com/life/tags/linux/"/>
+      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
     
-      <category term="centos7" scheme="http://signalfire2017.com/life/tags/centos7/"/>
+      <category term="centos7" scheme="http://life.signalfire2017.com/tags/centos7/"/>
     
-      <category term="linux命令" scheme="http://signalfire2017.com/life/tags/linux%E5%91%BD%E4%BB%A4/"/>
+      <category term="linux命令" scheme="http://life.signalfire2017.com/tags/linux%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>大数据02-03 shell编程语法讲解</title>
-    <link href="http://signalfire2017.com/life/2017/11/06/%E5%A4%A7%E6%95%B0%E6%8D%AE02-03%20shell%E7%BC%96%E7%A8%8B%E8%AF%AD%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
-    <id>http://signalfire2017.com/life/2017/11/06/大数据02-03 shell编程语法讲解/</id>
+    <link href="http://life.signalfire2017.com/2017/11/06/%E5%A4%A7%E6%95%B0%E6%8D%AE02-03%20shell%E7%BC%96%E7%A8%8B%E8%AF%AD%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
+    <id>http://life.signalfire2017.com/2017/11/06/大数据02-03 shell编程语法讲解/</id>
     <published>2017-11-06T15:02:36.000Z</published>
     <updated>2017-11-06T16:13:49.837Z</updated>
     
@@ -411,23 +411,23 @@ RS                 控制记录分隔符
     
     </summary>
     
-      <category term="学习" scheme="http://signalfire2017.com/life/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://life.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="大数据" scheme="http://signalfire2017.com/life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://life.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="linux" scheme="http://signalfire2017.com/life/tags/linux/"/>
+      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
     
-      <category term="centos7" scheme="http://signalfire2017.com/life/tags/centos7/"/>
+      <category term="centos7" scheme="http://life.signalfire2017.com/tags/centos7/"/>
     
-      <category term="linux命令" scheme="http://signalfire2017.com/life/tags/linux%E5%91%BD%E4%BB%A4/"/>
+      <category term="linux命令" scheme="http://life.signalfire2017.com/tags/linux%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>linux笔记-修改语言</title>
-    <link href="http://signalfire2017.com/life/2017/11/05/linux%E7%AC%94%E8%AE%B0-%E4%BF%AE%E6%94%B9%E8%AF%AD%E8%A8%80/"/>
-    <id>http://signalfire2017.com/life/2017/11/05/linux笔记-修改语言/</id>
+    <link href="http://life.signalfire2017.com/2017/11/05/linux%E7%AC%94%E8%AE%B0-%E4%BF%AE%E6%94%B9%E8%AF%AD%E8%A8%80/"/>
+    <id>http://life.signalfire2017.com/2017/11/05/linux笔记-修改语言/</id>
     <published>2017-11-05T15:39:47.000Z</published>
     <updated>2017-11-05T15:47:51.172Z</updated>
     
@@ -447,19 +447,19 @@ RS                 控制记录分隔符
     
     </summary>
     
-      <category term="学习" scheme="http://signalfire2017.com/life/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://life.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="linux" scheme="http://signalfire2017.com/life/tags/linux/"/>
+      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
     
-      <category term="centos7" scheme="http://signalfire2017.com/life/tags/centos7/"/>
+      <category term="centos7" scheme="http://life.signalfire2017.com/tags/centos7/"/>
     
   </entry>
   
   <entry>
     <title>vagrant 创建virtualBox虚拟机</title>
-    <link href="http://signalfire2017.com/life/2017/11/04/vagrant%20%E5%88%9B%E5%BB%BAvirtualBox%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    <id>http://signalfire2017.com/life/2017/11/04/vagrant 创建virtualBox虚拟机/</id>
+    <link href="http://life.signalfire2017.com/2017/11/04/vagrant%20%E5%88%9B%E5%BB%BAvirtualBox%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <id>http://life.signalfire2017.com/2017/11/04/vagrant 创建virtualBox虚拟机/</id>
     <published>2017-11-04T15:37:13.000Z</published>
     <updated>2017-11-04T15:06:41.385Z</updated>
     
@@ -825,17 +825,17 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     
     </summary>
     
-      <category term="工具" scheme="http://signalfire2017.com/life/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://life.signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="vagrant" scheme="http://signalfire2017.com/life/tags/vagrant/"/>
+      <category term="vagrant" scheme="http://life.signalfire2017.com/tags/vagrant/"/>
     
   </entry>
   
   <entry>
     <title>centos7 安装mysql-转</title>
-    <link href="http://signalfire2017.com/life/2017/11/04/centos7-%E5%AE%89%E8%A3%85mysql-%E8%BD%AC/"/>
-    <id>http://signalfire2017.com/life/2017/11/04/centos7-安装mysql-转/</id>
+    <link href="http://life.signalfire2017.com/2017/11/04/centos7-%E5%AE%89%E8%A3%85mysql-%E8%BD%AC/"/>
+    <id>http://life.signalfire2017.com/2017/11/04/centos7-安装mysql-转/</id>
     <published>2017-11-04T14:30:14.000Z</published>
     <updated>2017-11-04T15:15:04.097Z</updated>
     
@@ -862,21 +862,21 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     
     </summary>
     
-      <category term="学习" scheme="http://signalfire2017.com/life/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://life.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="大数据" scheme="http://signalfire2017.com/life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://life.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="linux" scheme="http://signalfire2017.com/life/tags/linux/"/>
+      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
     
-      <category term="mysql" scheme="http://signalfire2017.com/life/tags/mysql/"/>
+      <category term="mysql" scheme="http://life.signalfire2017.com/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>centos7 开放端口</title>
-    <link href="http://signalfire2017.com/life/2017/11/04/centos7-%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/"/>
-    <id>http://signalfire2017.com/life/2017/11/04/centos7-开放端口/</id>
+    <link href="http://life.signalfire2017.com/2017/11/04/centos7-%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/"/>
+    <id>http://life.signalfire2017.com/2017/11/04/centos7-开放端口/</id>
     <published>2017-11-04T14:15:10.000Z</published>
     <updated>2017-11-05T10:15:25.250Z</updated>
     
@@ -901,21 +901,21 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     
     </summary>
     
-      <category term="学习" scheme="http://signalfire2017.com/life/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://life.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="大数据" scheme="http://signalfire2017.com/life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://life.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="linux" scheme="http://signalfire2017.com/life/tags/linux/"/>
+      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
     
-      <category term="centos7" scheme="http://signalfire2017.com/life/tags/centos7/"/>
+      <category term="centos7" scheme="http://life.signalfire2017.com/tags/centos7/"/>
     
   </entry>
   
   <entry>
     <title>大数据02-02 linux命令继续学习 yum</title>
-    <link href="http://signalfire2017.com/life/2017/11/01/%E5%A4%A7%E6%95%B0%E6%8D%AE02-02-linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0-yum/"/>
-    <id>http://signalfire2017.com/life/2017/11/01/大数据02-02-linux命令继续学习-yum/</id>
+    <link href="http://life.signalfire2017.com/2017/11/01/%E5%A4%A7%E6%95%B0%E6%8D%AE02-02-linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0-yum/"/>
+    <id>http://life.signalfire2017.com/2017/11/01/大数据02-02-linux命令继续学习-yum/</id>
     <published>2017-11-01T15:50:39.000Z</published>
     <updated>2017-11-06T16:13:40.065Z</updated>
     
@@ -953,23 +953,23 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     
     </summary>
     
-      <category term="学习" scheme="http://signalfire2017.com/life/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://life.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="大数据" scheme="http://signalfire2017.com/life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://life.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="linux" scheme="http://signalfire2017.com/life/tags/linux/"/>
+      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
     
-      <category term="centos7" scheme="http://signalfire2017.com/life/tags/centos7/"/>
+      <category term="centos7" scheme="http://life.signalfire2017.com/tags/centos7/"/>
     
-      <category term="linux命令" scheme="http://signalfire2017.com/life/tags/linux%E5%91%BD%E4%BB%A4/"/>
+      <category term="linux命令" scheme="http://life.signalfire2017.com/tags/linux%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>hexo next 搜索 algolia</title>
-    <link href="http://signalfire2017.com/life/2017/10/30/hexo-next-%E6%90%9C%E7%B4%A2-algolia/"/>
-    <id>http://signalfire2017.com/life/2017/10/30/hexo-next-搜索-algolia/</id>
+    <link href="http://life.signalfire2017.com/2017/10/30/hexo-next-%E6%90%9C%E7%B4%A2-algolia/"/>
+    <id>http://life.signalfire2017.com/2017/10/30/hexo-next-搜索-algolia/</id>
     <published>2017-10-30T14:48:47.000Z</published>
     <updated>2017-10-30T15:08:00.240Z</updated>
     
@@ -1024,17 +1024,17 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     
     </summary>
     
-      <category term="工具" scheme="http://signalfire2017.com/life/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://life.signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="hexo" scheme="http://signalfire2017.com/life/tags/hexo/"/>
+      <category term="hexo" scheme="http://life.signalfire2017.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>大数据01-linux安装及基本命令.md</title>
-    <link href="http://signalfire2017.com/life/2017/10/30/%E5%A4%A7%E6%95%B0%E6%8D%AE01-linux%E5%AE%89%E8%A3%85%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
-    <id>http://signalfire2017.com/life/2017/10/30/大数据01-linux安装及基本命令/</id>
+    <link href="http://life.signalfire2017.com/2017/10/30/%E5%A4%A7%E6%95%B0%E6%8D%AE01-linux%E5%AE%89%E8%A3%85%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
+    <id>http://life.signalfire2017.com/2017/10/30/大数据01-linux安装及基本命令/</id>
     <published>2017-10-30T14:30:38.000Z</published>
     <updated>2017-11-06T16:13:20.500Z</updated>
     
@@ -1248,21 +1248,21 @@ chkconfig iptables off
     
     </summary>
     
-      <category term="大数据学习笔记" scheme="http://signalfire2017.com/life/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="大数据学习笔记" scheme="http://life.signalfire2017.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="大数据" scheme="http://signalfire2017.com/life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://life.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="linux" scheme="http://signalfire2017.com/life/tags/linux/"/>
+      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
     
-      <category term="linux命令" scheme="http://signalfire2017.com/life/tags/linux%E5%91%BD%E4%BB%A4/"/>
+      <category term="linux命令" scheme="http://life.signalfire2017.com/tags/linux%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>大数据02-01 linux命令继续学习.md</title>
-    <link href="http://signalfire2017.com/life/2017/10/29/%E5%A4%A7%E6%95%B0%E6%8D%AE02-01%20linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://signalfire2017.com/life/2017/10/29/大数据02-01 linux命令继续学习/</id>
+    <link href="http://life.signalfire2017.com/2017/10/29/%E5%A4%A7%E6%95%B0%E6%8D%AE02-01%20linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://life.signalfire2017.com/2017/10/29/大数据02-01 linux命令继续学习/</id>
     <published>2017-10-29T14:30:38.000Z</published>
     <updated>2017-11-06T16:13:15.524Z</updated>
     
@@ -1326,21 +1326,21 @@ per * .rpm
     
     </summary>
     
-      <category term="大数据学习笔记" scheme="http://signalfire2017.com/life/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="大数据学习笔记" scheme="http://life.signalfire2017.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="大数据" scheme="http://signalfire2017.com/life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://life.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="linux" scheme="http://signalfire2017.com/life/tags/linux/"/>
+      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
     
-      <category term="linux命令" scheme="http://signalfire2017.com/life/tags/linux%E5%91%BD%E4%BB%A4/"/>
+      <category term="linux命令" scheme="http://life.signalfire2017.com/tags/linux%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>vscode快捷键记录</title>
-    <link href="http://signalfire2017.com/life/2017/09/11/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/"/>
-    <id>http://signalfire2017.com/life/2017/09/11/vscode快捷键记录/</id>
+    <link href="http://life.signalfire2017.com/2017/09/11/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/"/>
+    <id>http://life.signalfire2017.com/2017/09/11/vscode快捷键记录/</id>
     <published>2017-09-10T16:07:26.000Z</published>
     <updated>2017-09-10T16:28:16.129Z</updated>
     
@@ -1360,19 +1360,19 @@ per * .rpm
     
     </summary>
     
-      <category term="工具" scheme="http://signalfire2017.com/life/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://life.signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="快捷键" scheme="http://signalfire2017.com/life/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <category term="快捷键" scheme="http://life.signalfire2017.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
-      <category term="vscode" scheme="http://signalfire2017.com/life/tags/vscode/"/>
+      <category term="vscode" scheme="http://life.signalfire2017.com/tags/vscode/"/>
     
   </entry>
   
   <entry>
     <title>idea快捷键记录</title>
-    <link href="http://signalfire2017.com/life/2017/09/03/idea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/"/>
-    <id>http://signalfire2017.com/life/2017/09/03/idea快捷键记录/</id>
+    <link href="http://life.signalfire2017.com/2017/09/03/idea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/"/>
+    <id>http://life.signalfire2017.com/2017/09/03/idea快捷键记录/</id>
     <published>2017-09-03T15:37:13.000Z</published>
     <updated>2017-09-10T16:23:29.507Z</updated>
     
@@ -1420,19 +1420,19 @@ per * .rpm
     
     </summary>
     
-      <category term="工具" scheme="http://signalfire2017.com/life/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://life.signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="idea" scheme="http://signalfire2017.com/life/tags/idea/"/>
+      <category term="idea" scheme="http://life.signalfire2017.com/tags/idea/"/>
     
-      <category term="快捷键" scheme="http://signalfire2017.com/life/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <category term="快捷键" scheme="http://life.signalfire2017.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
   </entry>
   
   <entry>
     <title>记录下hexo常用命令自己方便看</title>
-    <link href="http://signalfire2017.com/life/2017/09/03/%E8%AE%B0%E5%BD%95%E4%B8%8Bhexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%87%AA%E5%B7%B1%E6%96%B9%E4%BE%BF%E7%9C%8B/"/>
-    <id>http://signalfire2017.com/life/2017/09/03/记录下hexo常用命令自己方便看/</id>
+    <link href="http://life.signalfire2017.com/2017/09/03/%E8%AE%B0%E5%BD%95%E4%B8%8Bhexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%87%AA%E5%B7%B1%E6%96%B9%E4%BE%BF%E7%9C%8B/"/>
+    <id>http://life.signalfire2017.com/2017/09/03/记录下hexo常用命令自己方便看/</id>
     <published>2017-09-03T14:02:00.000Z</published>
     <updated>2017-09-03T15:30:32.771Z</updated>
     
@@ -1453,17 +1453,17 @@ hexo server -g
     
     </summary>
     
-      <category term="工具" scheme="http://signalfire2017.com/life/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://life.signalfire2017.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="hexo" scheme="http://signalfire2017.com/life/tags/hexo/"/>
+      <category term="hexo" scheme="http://life.signalfire2017.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>终于有了自己的博客</title>
-    <link href="http://signalfire2017.com/life/2017/08/27/%E7%BB%88%E4%BA%8E%E6%9C%89%E4%BA%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://signalfire2017.com/life/2017/08/27/终于有了自己的博客/</id>
+    <link href="http://life.signalfire2017.com/2017/08/27/%E7%BB%88%E4%BA%8E%E6%9C%89%E4%BA%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://life.signalfire2017.com/2017/08/27/终于有了自己的博客/</id>
     <published>2017-08-27T06:05:14.000Z</published>
     <updated>2017-09-03T15:22:52.890Z</updated>
     
@@ -1482,7 +1482,7 @@ hexo server -g
     
     </summary>
     
-      <category term="随笔" scheme="http://signalfire2017.com/life/categories/essay/"/>
+      <category term="随笔" scheme="http://life.signalfire2017.com/categories/essay/"/>
     
     
   </entry>
