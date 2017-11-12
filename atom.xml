@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://life.signalfire2017.com/"/>
-  <updated>2017-11-11T16:12:51.669Z</updated>
+  <updated>2017-11-11T16:18:47.938Z</updated>
   <id>http://life.signalfire2017.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://life.signalfire2017.com/2017/11/12/%E5%BC%80%E5%BF%83/"/>
     <id>http://life.signalfire2017.com/2017/11/12/开心/</id>
     <published>2017-11-11T16:11:45.000Z</published>
-    <updated>2017-11-11T16:12:51.669Z</updated>
+    <updated>2017-11-11T16:18:47.938Z</updated>
     
     <content type="html"><![CDATA[<p>写写东西</p>
 ]]></content>
@@ -32,14 +32,10 @@
     
     </summary>
     
-      <category term="学习" scheme="http://life.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="生活" scheme="http://life.signalfire2017.com/categories/life/"/>
     
     
-      <category term="大数据" scheme="http://life.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="linux" scheme="http://life.signalfire2017.com/tags/linux/"/>
-    
-      <category term="centos7" scheme="http://life.signalfire2017.com/tags/centos7/"/>
+      <category term="生活" scheme="http://life.signalfire2017.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
